@@ -10,6 +10,7 @@ import coldware.tipoplanetas.PlanetaNormal;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 
 /**
@@ -21,21 +22,27 @@ public class CrearEquipos extends javax.swing.JFrame {
     /**
      * Creates new form CrearEquipos
      */
-    private String[] tipos = new String[]{"Elije planeta","Normal","Sejuani","Gigante"};
+   static int contJugadores = -1;
+    private String[] tipos = new String[]{"Elije planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde"};
     public CrearEquipos() {
         initComponents();
         addEquipo(3);
     }
     
     private void addEquipo(int a){
+      
+        
+        
         for (int i = 0; i < a; i++) {
+            contJugadores++;
             JLabel jLabel = new javax.swing.JLabel();
             JPanel jPanel = new javax.swing.JPanel();
+              
             final JLabel jLabelimg = new javax.swing.JLabel();
             JTextField jTextField = new JTextField();
             JComboBox<String> jComboBox = new JComboBox<String>();
             jPanel.setMinimumSize(new java.awt.Dimension(133, 20));
-            jLabel.setText("Planeta "+(i+1)+":");
+            jLabel.setText("Planeta "+(contJugadores+1)+":");
             jPanel.add(jLabel);
             jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
             
@@ -59,6 +66,12 @@ public class CrearEquipos extends javax.swing.JFrame {
                     jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
                 }else if ("Gigante".equals(jComboBox.getSelectedItem())) {
                     jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\GragasSquare64.png")); // NOI18N
+                }else if ("Azul".equals(jComboBox.getSelectedItem())) {
+                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FizzSquare64.png")); // NOI18N
+                }else if ("Rojo".equals(jComboBox.getSelectedItem())) {
+                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\BrandSquare64.png")); // NOI18N
+                }else if ("Verde".equals(jComboBox.getSelectedItem())) {
+                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\IvernSquare64.png")); // NOI18N
                 }
           }              
 );
@@ -79,15 +92,11 @@ public class CrearEquipos extends javax.swing.JFrame {
         labelEquipos = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         btn_add = new javax.swing.JButton();
         btn_create = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         labelEquipos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         labelEquipos.setText("Crear Equipos");
@@ -97,22 +106,6 @@ public class CrearEquipos extends javax.swing.JFrame {
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
 
         jPanel3.setMinimumSize(new java.awt.Dimension(133, 20));
-
-        jLabel1.setText("Planeta 1:");
-        jPanel3.add(jLabel1);
-
-        jTextField1.setColumns(35);
-        jPanel3.add(jTextField1);
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Normal", "Sejuani", "Gigante" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jComboBox1);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\sergi\\Documents\\NetBeansProjects\\ColdwarSwing\\src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
         jPanel3.add(jLabel2);
 
         jPanel1.add(jPanel3);
@@ -157,8 +150,8 @@ public class CrearEquipos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(labelEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_add)
                     .addComponent(btn_create))
@@ -170,16 +163,20 @@ public class CrearEquipos extends javax.swing.JFrame {
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         // TODO add your handling code here:
-        addEquipo(1);
-        pack();
+       if (contJugadores<5){
+           addEquipo(1);
+        pack(); 
+           
+       }
+        
+       
+       
     }//GEN-LAST:event_btn_addActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
         // TODO add your handling code here:
+        
+        
         
         for (int i = 0; i < jPanel1.getComponents().length; i++) {
             String NombrePlaneta = null;
@@ -237,12 +234,9 @@ public class CrearEquipos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_create;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelEquipos;
     // End of variables declaration//GEN-END:variables
 }
