@@ -39,7 +39,7 @@ public class informacion extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Version 1.0.\n\nCREADORES:\nSergi Bertran Jordan,\nJorge Infantes Sorolla,\nAlex Rodriguez Piñeiro\n\nCORREOS:\nbigres24@gmail.com,\ninfantessorolla@gmail.com,\nalexrp202@gmail.com.\n");
+        jTextArea1.setText("Version 1.0.\n\nCREADORES:\nSergi Bertran Jordan,\nJorge Infantes Sorolla,\nAlex Rodriguez Piñeiro\n\nCORREOS:\nbigres24@gmail.com,\ninfantessorolla@gmail.com,\nalexrp202@gmail.com.");
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("Volver");

@@ -71,7 +71,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Version 1.0.&#xa;&#xa;CREADORES:&#xa;Sergi Bertran Jordan,&#xa;Jorge Infantes Sorolla,&#xa;Alex Rodriguez Pi&#xf1;eiro&#xa;&#xa;CORREOS:&#xa;bigres24@gmail.com,&#xa;infantessorolla@gmail.com,&#xa;alexrp202@gmail.com.&#xa;"/>
+            <Property name="text" type="java.lang.String" value="Version 1.0.&#xa;&#xa;CREADORES:&#xa;Sergi Bertran Jordan,&#xa;Jorge Infantes Sorolla,&#xa;Alex Rodriguez Pi&#xf1;eiro&#xa;&#xa;CORREOS:&#xa;bigres24@gmail.com,&#xa;infantessorolla@gmail.com,&#xa;alexrp202@gmail.com."/>
           </Properties>
         </Component>
       </SubComponents>
