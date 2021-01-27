@@ -34,12 +34,12 @@ public class Main extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Jugar");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -84,12 +84,19 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 567, 220, 50));
 
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\musica.png")); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\musica activa.png")); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 110, 70));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 50));
+
+        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\musica muteada.png")); // NOI18N
+        jButton6.setBorder(null);
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 50));
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\FONDOColdwarSwing.jpg")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -159,6 +166,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
