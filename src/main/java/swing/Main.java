@@ -5,21 +5,29 @@
  */
 package swing;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author sergi
  */
+
+
 public class Main extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
+   static int onoff = 0;
+
     public Main() {
+        this.setBounds(80,30,120,40);
         initComponents();
         
         this.setVisible(true);
-    }
-
+jLabel3.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FONDOColdwarSwing.jpg")); // NOI18N
+jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada.png")); // NOI18N
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,7 +42,6 @@ public class Main extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,26 +91,28 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 567, 220, 50));
 
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\musica activa.png")); // NOI18N
         jButton5.setBorder(null);
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 70, 50));
 
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\musica muteada.png")); // NOI18N
-        jButton6.setBorder(null);
-        jButton6.setBorderPainted(false);
-        jButton6.setContentAreaFilled(false);
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 50));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\FONDOColdwarSwing.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwing\\ColdWarSwingBo\\src\\main\\java\\img\\FONDOColdwarSwing.jpg")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    
+            
 
+ 
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new ControlPartida().empezar();
         this.setVisible(false);
@@ -124,6 +133,21 @@ public class Main extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    
+    onoff++;
+    
+    if (onoff % 2==0){
+        jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada.png")); // NOI18N
+    }else{
+        
+        jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica activa.png")); // NOI18N
+    }
+     
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +180,7 @@ public class Main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
+                
             }
         });
     }
@@ -166,7 +191,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+
+ 
+    
+    
 }

@@ -17,6 +17,7 @@ public class reglas extends javax.swing.JFrame {
     public reglas() {
         initComponents();
         this.setVisible(true);
+         jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\REGLAS.jpg")); // NOI18N
     }
 
     /**
@@ -61,7 +62,7 @@ public class reglas extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 670, 90, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\REGLAS.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwing\\ColdWarSwingBo\\src\\main\\java\\img\\REGLAS.jpg")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
