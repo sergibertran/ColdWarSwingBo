@@ -180,11 +180,25 @@ public class CrearEquipos extends javax.swing.JFrame {
         
         for (int i = 0; i < jPanel1.getComponents().length; i++) {
             String NombrePlaneta = null;
+            String TipoPlaneta = null;
             JPanel jPanelPosicion = (JPanel) jPanel1.getComponent(i);
             for (int j = 0; j < jPanelPosicion.getComponents().length; j++) {
                 
                 if (jPanelPosicion.getComponent(j) instanceof JTextField){
                     NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();
+                    
+                    
+                    
+                   // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
+                    System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
+                   
+                    
+                } 
+               else if (jPanelPosicion.getComponent(j) instanceof JComboBox){
+            
+                   // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
+                   // System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
+                    System.out.println( ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem());
                     
                 }
                 
