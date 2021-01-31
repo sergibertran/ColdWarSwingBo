@@ -187,8 +187,6 @@ public class CrearEquipos extends javax.swing.JFrame {
                 if (jPanelPosicion.getComponent(j) instanceof JTextField){
                     NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();
                     
-                    
-                    
                    // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
                     System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
                    
@@ -204,10 +202,11 @@ public class CrearEquipos extends javax.swing.JFrame {
                 
                 
             }
+            
             //Planeta planeta = new PlanetaNormal(i,NombrePlaneta, Partida);
         }
-        
-        
+         new AccionPlanetas();
+        this.setVisible(false);
     }//GEN-LAST:event_btn_createActionPerformed
 
     /**
