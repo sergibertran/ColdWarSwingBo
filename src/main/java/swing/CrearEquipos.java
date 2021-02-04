@@ -175,12 +175,13 @@ public class CrearEquipos extends javax.swing.JFrame {
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
         // TODO add your handling code here:
+        String TipoPlaneta = null;
         
         
         
         for (int i = 0; i < jPanel1.getComponents().length; i++) {
             String NombrePlaneta = null;
-            String TipoPlaneta = null;
+            
             JPanel jPanelPosicion = (JPanel) jPanel1.getComponent(i);
             for (int j = 0; j < jPanelPosicion.getComponents().length; j++) {
                 
@@ -188,7 +189,7 @@ public class CrearEquipos extends javax.swing.JFrame {
                     NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();
                     
                    // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
-                    System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
+                    //System.out.println("Planeta:"+NombrePlaneta);
                    
                     
                 } 
@@ -196,8 +197,10 @@ public class CrearEquipos extends javax.swing.JFrame {
             
                    // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
                    // System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
-                    System.out.println( ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem());
-                    
+                   
+                    //System.out.println( ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem());
+                    TipoPlaneta=(String) ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem();
+                    crearPlanetas(TipoPlaneta, NombrePlaneta);
                 }
                 
                 
@@ -209,6 +212,43 @@ public class CrearEquipos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_createActionPerformed
 
+    public Planeta crearPlanetas(String TipoPlaneta, String NombrePlaneta){
+        
+         System.out.println("esta es la funcion"+TipoPlaneta);
+         
+          switch(TipoPlaneta) 
+        { 
+            case "Sejuani": 
+                System.out.println("Sejuani switch "); 
+                System.out.println(NombrePlaneta);
+                        
+                     
+                break; 
+            case "Normal": 
+                System.out.println("Normal switch"); 
+                  System.out.println(NombrePlaneta);
+                break; 
+            case "Gigante": 
+                System.out.println("Gigante switch");
+                  System.out.println(NombrePlaneta);
+                break; 
+                   case "Azul": 
+                System.out.println("Azul switch"); 
+                  System.out.println(NombrePlaneta);
+                break; 
+            case "Rojo": 
+                System.out.println("Rojo switch"); 
+                  System.out.println(NombrePlaneta);
+                break; 
+                   case "Verde": 
+                System.out.println("Verde switch");
+                  System.out.println(NombrePlaneta);
+                break; 
+           
+            
+        } 
+         
+    }
     /**
      * @param args the command line arguments
      */
