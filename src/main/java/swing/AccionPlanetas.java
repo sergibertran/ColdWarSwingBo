@@ -5,9 +5,6 @@
  */
 package swing;
 
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
 /**
  *
  * @author Alex
@@ -20,20 +17,8 @@ public class AccionPlanetas extends javax.swing.JFrame {
     public AccionPlanetas() {
         initComponents();
          this.setVisible(true);
-          //jTextFieldAtacar.setEnabled(false);
-          //jTextFieldDefender.setEnabled(false);
-          
-          
-          jTextFieldAtacar.setVisible(false); 
-    jTextFieldDefender.setVisible(false);     
-    jComboBoxAtacarEquipos.setVisible(false); 
-          
-          
-      
-         
-         
+        
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,141 +32,80 @@ public class AccionPlanetas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButtonAtacar = new javax.swing.JButton();
-        jButtonDefender = new javax.swing.JButton();
-        jComboBoxAtacarEquipos = new javax.swing.JComboBox<>();
-        jButtonEjecutar = new javax.swing.JButton();
-        jTextFieldAtacar = new javax.swing.JTextField();
-        jTextFieldDefender = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Planeta Maricon");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwing\\ColdWarSwingBo\\src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Alex\\Documents\\DAW2\\Programacion\\ColdWarSwingBo\\src\\main\\java\\img\\GragasSquare64.png")); // NOI18N
 
         jLabel3.setText("JorgitoSuperStar");
 
-        jButtonAtacar.setText("Atacar");
-        jButtonAtacar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Atacar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAtacarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jButtonDefender.setText("Defender");
-        jButtonDefender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDefenderActionPerformed(evt);
-            }
-        });
-
-        jComboBoxAtacarEquipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sejuani", "Gigante", "Verde", "Rojo" }));
-
-        jButtonEjecutar.setText("Ejecutar");
-        jButtonEjecutar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEjecutarActionPerformed(evt);
-            }
-        });
-
-        jTextFieldAtacar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAtacarActionPerformed(evt);
-            }
-        });
-
-        jTextFieldDefender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDefenderActionPerformed(evt);
-            }
-        });
+        jButton2.setText("Defender");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(185, 185, 185)
+                        .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBoxAtacarEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(48, 48, 48)
-                                .addComponent(jButtonAtacar))
-                            .addComponent(jTextFieldAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonDefender)
-                            .addComponent(jTextFieldDefender, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(322, Short.MAX_VALUE)
-                .addComponent(jButtonEjecutar)
-                .addGap(240, 240, 240))
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)
+                        .addComponent(jLabel2)))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(237, 237, 237)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButtonAtacar)
-                        .addComponent(jButtonDefender)))
-                .addGap(18, 18, 18)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxAtacarEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldDefender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jTextFieldAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jButtonEjecutar)
-                .addContainerGap(256, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtacarActionPerformed
-jTextFieldAtacar.setVisible(true); 
-jTextFieldDefender.setVisible(false);     
-jComboBoxAtacarEquipos.setVisible(true);     
-    }//GEN-LAST:event_jButtonAtacarActionPerformed
-
-   
-    
-    
-    
-    private void jButtonEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEjecutarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEjecutarActionPerformed
-
-    private void jTextFieldAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAtacarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldAtacarActionPerformed
-
-    private void jTextFieldDefenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDefenderActionPerformed
-           // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDefenderActionPerformed
-
-    private void jButtonDefenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDefenderActionPerformed
-jTextFieldAtacar.setVisible(false); 
-jTextFieldDefender.setVisible(true);     
-jComboBoxAtacarEquipos.setVisible(false);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonDefenderActionPerformed
+        this.setVisible(false);
+        AccionPlanetas ataque=new AccionPlanetas();
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     /**
@@ -220,14 +144,10 @@ jComboBoxAtacarEquipos.setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAtacar;
-    private javax.swing.JButton jButtonDefender;
-    private javax.swing.JButton jButtonEjecutar;
-    private javax.swing.JComboBox<String> jComboBoxAtacarEquipos;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextFieldAtacar;
-    private javax.swing.JTextField jTextFieldDefender;
     // End of variables declaration//GEN-END:variables
 }
