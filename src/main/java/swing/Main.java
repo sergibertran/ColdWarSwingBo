@@ -114,7 +114,7 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
  
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new ControlPartida().empezar();
+        new ControlPartida().crearEquipos();
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -184,7 +184,7 @@ public class Partida {
 				System.out.print("--> ");
 				tplaneta = Integer.parseInt(teclado.nextLine());
 
-				switch (tplaneta) {
+				/*switch (tplaneta) {
 				case 1:
 					restipoplaneta = new PlanetaRojo(x, nom, this);
 					System.out.println("");
@@ -240,7 +240,7 @@ public class Partida {
 					System.out.println("Has introducido un numero no valido.");
 					System.out.println("");
 					tplaneta = 0;
-				}
+				}*/
 			} catch (Exception e) {
 				System.out.println("");
 				System.out.println("Debes insertar un digito");

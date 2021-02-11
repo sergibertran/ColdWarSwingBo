@@ -1,6 +1,6 @@
 
 package coldware;
-
+import swing.Partida;
 
 public abstract class Planeta {
 

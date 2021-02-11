@@ -3,7 +3,7 @@ package coldware.tipoplanetas;
 import java.util.Random;
 
 import coldware.Planeta;
-import coldware.Partida;
+import swing.Partida;
 
 public class PlanetaZombie extends Planeta {
 	Random rand = new Random();

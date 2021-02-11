@@ -5,35 +5,43 @@
  */
 package swing;
 
-import javax.swing.JLabel;
-import javax.swing.JTextField;
+import coldware.Planeta;
+import java.util.List;
+
+
 
 /**
  *
  * @author Alex
  */
-public class AccionPlanetas extends javax.swing.JFrame {
+public class AccionPlanetas extends javax.swing.JDialog {
 
     /**
      * Creates new form AccionPlanetas
      */
+    private int jugador = 0;
+    private List<Planeta> planetas;
+    
+    private int atacado = 0;
+    private int misilesTirados  = 0;
+    
+    
     public AccionPlanetas() {
         initComponents();
-         this.setVisible(true);
-          //jTextFieldAtacar.setEnabled(false);
-          //jTextFieldDefender.setEnabled(false);
-          
-          
-          jTextFieldAtacar.setVisible(false); 
-    jTextFieldDefender.setVisible(false);     
-    jComboBoxAtacarEquipos.setVisible(false); 
-          
-          
-      
-         
-         
+        this.setVisible(true);
+        jTextFieldAtacar.setVisible(false);
+        jTextFieldDefender.setVisible(false);
+        jComboBoxAtacarEquipos.setVisible(false);
+        setModalityType(DEFAULT_MODALITY_TYPE);
     }
     
+    public AccionPlanetas(List<Planeta> planetas,int i){
+        this();
+        this.jugador = i;
+        this.planetas = planetas;
+        this.planetas.get(i).getNombre();
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,11 +62,7 @@ public class AccionPlanetas extends javax.swing.JFrame {
         jTextFieldAtacar = new javax.swing.JTextField();
         jTextFieldDefender = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel1.setText("Planeta Maricon");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwing\\ColdWarSwingBo\\src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
 
         jLabel3.setText("JorgitoSuperStar");
 
@@ -155,16 +159,19 @@ public class AccionPlanetas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtacarActionPerformed
-jTextFieldAtacar.setVisible(true); 
-jTextFieldDefender.setVisible(false);     
-jComboBoxAtacarEquipos.setVisible(true);     
+        jTextFieldAtacar.setVisible(true);
+        jTextFieldDefender.setVisible(false);
+        jComboBoxAtacarEquipos.setVisible(true);
     }//GEN-LAST:event_jButtonAtacarActionPerformed
 
-   
-    
-    
-    
+
     private void jButtonEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEjecutarActionPerformed
+
+
+          if (this.planetas.get(jugador).getMisilesTiradosRonda()==0){
+              jugador++;
+              
+          }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonEjecutarActionPerformed
 
@@ -173,17 +180,24 @@ jComboBoxAtacarEquipos.setVisible(true);
     }//GEN-LAST:event_jTextFieldAtacarActionPerformed
 
     private void jTextFieldDefenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDefenderActionPerformed
-           // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldDefenderActionPerformed
 
     private void jButtonDefenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDefenderActionPerformed
-jTextFieldAtacar.setVisible(false); 
-jTextFieldDefender.setVisible(true);     
-jComboBoxAtacarEquipos.setVisible(false);
+        jTextFieldAtacar.setVisible(false);
+        jTextFieldDefender.setVisible(true);
+        jComboBoxAtacarEquipos.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonDefenderActionPerformed
 
-    
+    public int getAtacado() {
+        return atacado;
+    }
+
+    public int getMisilesTirados() {
+        return misilesTirados;
+    }
+
     /**
      * @param args the command line arguments
      */

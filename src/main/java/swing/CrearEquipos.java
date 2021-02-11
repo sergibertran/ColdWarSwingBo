@@ -7,6 +7,8 @@ package swing;
 
 import coldware.Planeta;
 import coldware.tipoplanetas.PlanetaNormal;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,10 +25,15 @@ public class CrearEquipos extends javax.swing.JFrame {
      * Creates new form CrearEquipos
      */
    static int contJugadores = -1;
+    private ControlPartida control;
     private String[] tipos = new String[]{"Elije planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde"};
     public CrearEquipos() {
         initComponents();
-        addEquipo(3);
+    }
+
+    CrearEquipos(ControlPartida aThis) {
+       initComponents();
+       control = aThis;
     }
     
     private void addEquipo(int a){
@@ -91,8 +98,6 @@ public class CrearEquipos extends javax.swing.JFrame {
 
         labelEquipos = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         btn_add = new javax.swing.JButton();
         btn_create = new javax.swing.JButton();
 
@@ -104,11 +109,6 @@ public class CrearEquipos extends javax.swing.JFrame {
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
-
-        jPanel3.setMinimumSize(new java.awt.Dimension(133, 20));
-        jPanel3.add(jLabel2);
-
-        jPanel1.add(jPanel3);
 
         btn_add.setText("Añadir");
         btn_add.addActionListener(new java.awt.event.ActionListener() {
@@ -174,81 +174,31 @@ public class CrearEquipos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
-        // TODO add your handling code here:
-        String TipoPlaneta = null;
-        
-        
-        
+        List<Planeta> planetas  = new ArrayList<>();
         for (int i = 0; i < jPanel1.getComponents().length; i++) {
             String NombrePlaneta = null;
-            
+            String TipoPlaneta = null;
             JPanel jPanelPosicion = (JPanel) jPanel1.getComponent(i);
             for (int j = 0; j < jPanelPosicion.getComponents().length; j++) {
-                
                 if (jPanelPosicion.getComponent(j) instanceof JTextField){
-                    NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();
-                    
-                   // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
-                    //System.out.println("Planeta:"+NombrePlaneta);
-                   
+                    NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText(); 
                     
                 } 
                else if (jPanelPosicion.getComponent(j) instanceof JComboBox){
-            
-                   // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
-                   // System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
-                   
-                    //System.out.println( ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem());
                     TipoPlaneta=(String) ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem();
-                    crearPlanetas(TipoPlaneta, NombrePlaneta);
+                    
                 }
-                
-                
+                 
             }
-            
-            //Planeta planeta = new PlanetaNormal(i,NombrePlaneta, Partida);
+           if(NombrePlaneta != null && TipoPlaneta != null){
+               planetas.add(control.getPartida().crearPlanetas(i, TipoPlaneta,NombrePlaneta ));
+           }
         }
-         new AccionPlanetas();
-        this.setVisible(false);
+        control.empezar(planetas);
+        dispose();
     }//GEN-LAST:event_btn_createActionPerformed
 
-    public Planeta crearPlanetas(String TipoPlaneta, String NombrePlaneta){
-        
-         System.out.println("esta es la funcion"+TipoPlaneta);
-         
-          switch(TipoPlaneta) 
-        { 
-            case "Sejuani": 
-                System.out.println("Sejuani switch "); 
-                System.out.println(NombrePlaneta);
-                        
-                     
-                break; 
-            case "Normal": 
-                System.out.println("Normal switch"); 
-                  System.out.println(NombrePlaneta);
-                break; 
-            case "Gigante": 
-                System.out.println("Gigante switch");
-                  System.out.println(NombrePlaneta);
-                break; 
-                   case "Azul": 
-                System.out.println("Azul switch"); 
-                  System.out.println(NombrePlaneta);
-                break; 
-            case "Rojo": 
-                System.out.println("Rojo switch"); 
-                  System.out.println(NombrePlaneta);
-                break; 
-                   case "Verde": 
-                System.out.println("Verde switch");
-                  System.out.println(NombrePlaneta);
-                break; 
-           
-            
-        } 
-         
-    }
+    
     /**
      * @param args the command line arguments
      */
@@ -287,9 +237,7 @@ public class CrearEquipos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_create;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelEquipos;
     // End of variables declaration//GEN-END:variables
 }

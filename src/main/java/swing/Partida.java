@@ -4,7 +4,6 @@ package swing;
 import coldware.*;
 import java.util.Random;
 import java.util.Scanner;
-
 import coldware.tipoplanetas.PlanetaAzul;
 import coldware.tipoplanetas.PlanetaColateral;
 import coldware.tipoplanetas.PlanetaEnano;
@@ -18,6 +17,7 @@ import coldware.tipoplanetas.PlanetaZombie;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 
 public class Partida {
 
@@ -26,18 +26,19 @@ public class Partida {
     String nom = "";
     // variables d iniciar
     int contRondas = 1;
-    int cont = 0;
     int equipoAtacado = 0;
     boolean comdef = true;
     boolean comatac = true;
     int misilesTirados = 0;
     int tplaneta;
-
+    private ControlPartida control;
     // creamos un array para guardar datos de equipos
-    ArrayList<Planeta> planetas = new ArrayList<Planeta>();
+    List<Planeta> planetas = new ArrayList<Planeta>();
     public ArrayList<String> movimientos = new ArrayList<String>();
 
-
+    public Partida(ControlPartida control){
+        this.control = control;
+    }
 
     /**
      * ***********************************************************************************
@@ -45,26 +46,71 @@ public class Partida {
      * * Parametros entrada: Scanner teclado * Parametros salida: 
 	*************************************************************************************
      */
-    public void iniciarPartida(ArrayList<Planeta> planetas) {
+    public void iniciarPartida(List<Planeta> planetas) {
 
         this.planetas = planetas;
 
         // se repite todo el rato hasta que quede 1 planeta vivo o 0 vivos
-        while (planetas.size() != 1 && planetas.size() != 0) {
+        //while (planetas.size() != 1 && planetas.size() != 0) {
 
             comprobarEquiposVivos();
-
-            // una vez sabemos los planetas que quedan lo mostramos
-            mostrarEquiposVivos();
 
             // empieza la ronda
             ronda();
 
-        }
+        //}
 
         mostrarGanador();
         Planeta.reiniciarnumequipos();
 
+    }
+    
+     public Planeta crearPlanetas(int x,String TipoPlaneta, String NombrePlaneta){
+        
+         Planeta restipoplaneta = null;
+         
+         System.out.println("esta es la funcion"+TipoPlaneta);
+         
+          switch(TipoPlaneta) 
+        { 
+            case "Sejuani": 
+                System.out.println("Sejuani switch "); 
+                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                System.out.println(NombrePlaneta);
+                        
+                     
+                break; 
+            case "Normal": 
+                System.out.println("Normal switch");
+                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                  System.out.println(NombrePlaneta);
+                break; 
+            case "Gigante": 
+                System.out.println("Gigante switch");
+                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                  System.out.println(NombrePlaneta);
+                break; 
+                   case "Azul": 
+                System.out.println("Azul switch"); 
+                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                  System.out.println(NombrePlaneta);
+                break; 
+            case "Rojo": 
+                System.out.println("Rojo switch"); 
+                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                  System.out.println(NombrePlaneta);
+                break; 
+                   case "Verde": 
+                System.out.println("Verde switch");
+                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                  System.out.println(NombrePlaneta);
+                break; 
+            default:
+                throw new  IllegalStateException("No se ha podido crear el jugador");
+            
+        } 
+        return restipoplaneta;
+         
     }
 
     /**
@@ -173,15 +219,13 @@ public class Partida {
 
         // vamos a mirar a que equipo queremos atacar o defender
         for (i = 0; i < planetas.size(); i++) {
-
             while (planetas.get(i).getMisiles_ronda() > 0) { // mientras tengas misiles entrara
                 // pregunta a que equipo atacar
 
                 // printa los misiles
                 // print opcion de defensa
-                //ataqueYDefensa(i);
-
-                cont = 0;
+                int[] orden = control.ordenes(planetas, i);
+                ataqueYDefensa(orden[0],orden[1]);
             }
 
         }
@@ -266,17 +310,14 @@ public class Partida {
      ** mostrarEquiposVivos * Mostraremos los planetas vivos * Parametros
      * entrada: * Parametros salida: 
 	*************************************************************************************
+     * @return 
      */
-    public ArrayList mostrarEquiposVivos() {
-        ArrayList<String> EquiposVivos = new ArrayList<String>();
+    public List<String> mostrarEquiposVivos() {
+        List<String> EquiposVivos = new ArrayList<String>();
         // funcion mostrar equiposvivos
-
         for (int i = 0; i < planetas.size(); i++) {
-
             EquiposVivos.add(planetas.get(i).getNombre() + " " + planetas.get(i).getVidas());
-
         }
-
         return EquiposVivos;
     }
 
