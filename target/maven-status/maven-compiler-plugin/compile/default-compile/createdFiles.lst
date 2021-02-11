@@ -1,17 +1,25 @@
 swing\informacion$1.class
+<<<<<<< HEAD
 swing\ResumenRonda$1.class
 swing\AccionPlanetas$1.class
 swing\reglas$2.class
 swing\AccionPlanetas$6.class
+=======
+swing\reglas$2.class
+>>>>>>> 7ddd09afd0a9c9cc97e7c7daddf5749dab73b06a
 coldware\tipoplanetas\PlanetaAzul.class
 coldware\Partida.class
 swing\Main$4.class
 coldware\tipoplanetas\PlanetaRojo.class
 swing\Main$5.class
 coldware\tipoplanetas\PlanetaGigante.class
+<<<<<<< HEAD
 swing\AccionPlanetas$5.class
 swing\CrearEquipos$1.class
 swing\AccionPlanetas$3.class
+=======
+swing\CrearEquipos$1.class
+>>>>>>> 7ddd09afd0a9c9cc97e7c7daddf5749dab73b06a
 coldware\Main.class
 swing\ControlPartida.class
 coldware\ConexionBD.class
@@ -29,6 +37,7 @@ swing\Partida.class
 swing\informacion$2.class
 swing\reglas$3.class
 coldware\Reproductor.class
+<<<<<<< HEAD
 swing\AccionPlanetas$2.class
 coldware\tipoplanetas\PlanetaVerde.class
 coldware\Planeta.class
@@ -40,5 +49,14 @@ swing\AccionPlanetas.class
 swing\CrearEquipos$2.class
 swing\informacion.class
 swing\Main$6.class
+=======
+coldware\tipoplanetas\PlanetaVerde.class
+coldware\Planeta.class
+coldware\tipoplanetas\PlanetaSejuani.class
+coldware\tipoplanetas\PlanetaZombie.class
+coldware\tipoplanetas\PlanetaEnano.class
+swing\CrearEquipos$2.class
+swing\informacion.class
+>>>>>>> 7ddd09afd0a9c9cc97e7c7daddf5749dab73b06a
 coldware\tipoplanetas\PlanetaVampiro.class
 swing\AccionPlanetas$4.class

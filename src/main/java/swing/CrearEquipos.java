@@ -174,18 +174,40 @@ public class CrearEquipos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
+<<<<<<< HEAD
         List<Planeta> planetas  = new ArrayList<>();
+=======
+        // TODO add your handling code here:
+        
+        
+        
+>>>>>>> 7ddd09afd0a9c9cc97e7c7daddf5749dab73b06a
         for (int i = 0; i < jPanel1.getComponents().length; i++) {
             String NombrePlaneta = null;
             String TipoPlaneta = null;
             JPanel jPanelPosicion = (JPanel) jPanel1.getComponent(i);
             for (int j = 0; j < jPanelPosicion.getComponents().length; j++) {
                 if (jPanelPosicion.getComponent(j) instanceof JTextField){
+<<<<<<< HEAD
                     NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText(); 
                     
                 } 
                else if (jPanelPosicion.getComponent(j) instanceof JComboBox){
                     TipoPlaneta=(String) ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem();
+=======
+                    NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();
+                    
+                   // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
+                    System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
+                   
+                    
+                } 
+               else if (jPanelPosicion.getComponent(j) instanceof JComboBox){
+            
+                   // System.out.println(Arrays.toString((String[])combo.getSelectedItem()));
+                   // System.out.println("Planeta "+(contJugadores)+":"+NombrePlaneta);
+                    System.out.println( ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem());
+>>>>>>> 7ddd09afd0a9c9cc97e7c7daddf5749dab73b06a
                     
                 }
                  
@@ -198,7 +220,10 @@ public class CrearEquipos extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_createActionPerformed
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 7ddd09afd0a9c9cc97e7c7daddf5749dab73b06a
     /**
      * @param args the command line arguments
      */
