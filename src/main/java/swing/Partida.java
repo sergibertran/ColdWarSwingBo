@@ -51,14 +51,14 @@ public class Partida {
         this.planetas = planetas;
 
         // se repite todo el rato hasta que quede 1 planeta vivo o 0 vivos
-        //while (planetas.size() != 1 && planetas.size() != 0) {
+        while (planetas.size() > 1) {
 
             comprobarEquiposVivos();
 
             // empieza la ronda
             ronda();
 
-        //}
+        }
 
         mostrarGanador();
         Planeta.reiniciarnumequipos();
@@ -220,12 +220,8 @@ public class Partida {
         // vamos a mirar a que equipo queremos atacar o defender
         for (i = 0; i < planetas.size(); i++) {
             while (planetas.get(i).getMisiles_ronda() > 0) { // mientras tengas misiles entrara
-                // pregunta a que equipo atacar
-
-                // printa los misiles
-                // print opcion de defensa
-                int[] orden = control.ordenes(planetas, i);
-                ataqueYDefensa(orden[0],orden[1]);
+                AccionPlanetas ap =new AccionPlanetas(planetas,i);
+                ataqueYDefensa(ap.getAtacado(),i,ap.getMisilesTirados());
             }
 
         }
@@ -249,10 +245,7 @@ public class Partida {
      * ArrayList movimientos * Parametros salida: 
 	*************************************************************************************
      */
-    private void ataqueYDefensa(int i, int misilesTirados) {
-
-        // ATAQUE O DEFENSA
-        equipoAtacado = i; // cambia
+    private void ataqueYDefensa(int equipoAtacado, int i, int misilesTirados) {
 
         // SI DEFIENDE
         if (equipoAtacado == (0)) {

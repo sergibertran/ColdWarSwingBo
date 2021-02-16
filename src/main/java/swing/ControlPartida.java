@@ -6,6 +6,7 @@
 package swing;
 
 import coldware.Planeta;
+import java.awt.EventQueue;
 import java.util.List;
 
 /**
