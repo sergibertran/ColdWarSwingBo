@@ -5,15 +5,41 @@
  */
 package swing;
 
+import coldware.Planeta;
+import java.awt.EventQueue;
+import java.util.List;
+
 /**
  *
  * @author sergi
  */
 public class ControlPartida {
+    
+    private Partida partida;
+    
+    public ControlPartida(){
+        partida = new Partida(this);
+    }
+    
+    public Partida getPartida(){
+        return partida;
+    }
+           
 
-    void empezar() {
-        CrearEquipos pantCrear = new CrearEquipos();
+    void crearEquipos() {
+        CrearEquipos pantCrear = new CrearEquipos(this);
         pantCrear.setVisible(true);
+    }
+
+    void empezar(List<Planeta> planetas) {
+        partida.iniciarPartida(planetas);
+    }
+    
+    int[] ordenes(List<Planeta> equiposVivos,int i){
+        AccionPlanetas ap = new AccionPlanetas(equiposVivos,i);
+        int[] temp = new int[]{ap.getAtacado(),ap.getMisilesTirados()};
+        ap.dispose();
+        return temp;
     }
 
 }

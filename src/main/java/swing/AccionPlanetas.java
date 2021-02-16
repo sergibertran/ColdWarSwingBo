@@ -5,20 +5,44 @@
  */
 package swing;
 
+
+import coldware.Planeta;
+import java.util.List;
+
+
 /**
  *
  * @author Alex
  */
-public class AccionPlanetas extends javax.swing.JFrame {
+public class AccionPlanetas extends javax.swing.JDialog {
 
     /**
      * Creates new form AccionPlanetas
      */
+    private int jugador = 0;
+    private List<Planeta> planetas;
+    
+    private int atacado = 0;
+    private int misilesTirados  = 0;
+    
+    
     public AccionPlanetas() {
+        super();
         initComponents();
-         this.setVisible(true);
+        this.setModal(true);
+        this.setVisible(true);
+        jTextFieldAtacar.setVisible(false);
+        jTextFieldDefender.setVisible(false);
+        jComboBoxAtacarEquipos.setVisible(false);
         
     }
+    
+    public AccionPlanetas(List<Planeta> planetas,int i){
+        this();
+        this.jugador = i;
+        this.planetas = planetas;
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,84 +54,138 @@ public class AccionPlanetas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButtonAtacar = new javax.swing.JButton();
+        jButtonDefender = new javax.swing.JButton();
+        jTextFieldAtacar = new javax.swing.JTextField();
+        jTextFieldDefender = new javax.swing.JTextField();
+        jComboBoxAtacarEquipos = new javax.swing.JComboBox<>();
 
         jLabel1.setText("Planeta Maricon");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Alex\\Documents\\DAW2\\Programacion\\ColdWarSwingBo\\src\\main\\java\\img\\GragasSquare64.png")); // NOI18N
-
         jLabel3.setText("JorgitoSuperStar");
 
-        jButton1.setText("Atacar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAtacar.setText("Atacar");
+        jButtonAtacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAtacarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Defender");
+        jButtonDefender.setText("Defender");
+        jButtonDefender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDefenderActionPerformed(evt);
+            }
+        });
+
+        jTextFieldAtacar.setText("jTextField1");
+
+        jTextFieldDefender.setText("jTextField2");
+
+        jComboBoxAtacarEquipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
+                .addGap(39, 39, 39)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(105, 105, 105)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(185, 185, 185)
-                        .addComponent(jButton2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(57, 57, 57)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(77, 77, 77)
-                        .addComponent(jLabel2)))
-                .addContainerGap(228, Short.MAX_VALUE))
+                    .addComponent(jButtonAtacar)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jComboBoxAtacarEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonDefender)
+                    .addComponent(jTextFieldDefender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
+                .addGap(94, 94, 94)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonAtacar)
+                    .addComponent(jButtonDefender))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(237, 237, 237)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)))
+                        .addGap(63, 63, 63)
+                        .addComponent(jTextFieldDefender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(102, 102, 102)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(149, Short.MAX_VALUE))
+                        .addGap(47, 47, 47)
+                        .addComponent(jComboBoxAtacarEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(49, 49, 49)
+                .addComponent(jTextFieldAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        AccionPlanetas ataque=new AccionPlanetas();
-        
-        
-        
-        
-        
-        
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
 
-    
+    private void jButtonAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtacarActionPerformed
+        jTextFieldAtacar.setVisible(true);
+        jTextFieldDefender.setVisible(false);
+        jComboBoxAtacarEquipos.setVisible(true);
+        
+        //TEST BAJA 50 MISILES
+        
+        this.misilesTirados = 50;
+        for(int j = 0; j < planetas.size();j++){
+            if(jugador!= j && planetas.get(j).getVidas()  > 0 ){
+                this.atacado =j;
+                break;
+            }
+        }
+        dispose();
+    }//GEN-LAST:event_jButtonAtacarActionPerformed
+
+
+    private void jButtonEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEjecutarActionPerformed
+
+
+          if (this.planetas.get(jugador).getMisilesTiradosRonda()==0){
+              jugador++;
+              
+          }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEjecutarActionPerformed
+
+    private void jTextFieldAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAtacarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldAtacarActionPerformed
+
+    private void jTextFieldDefenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDefenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDefenderActionPerformed
+
+    private void jButtonDefenderActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        jTextFieldAtacar.setVisible(false);
+        jTextFieldDefender.setVisible(true);
+        jComboBoxAtacarEquipos.setVisible(false);
+    }
+ 
+
+    public int getAtacado() {
+        return atacado;
+    }
+
+    public int getMisilesTirados() {
+        return misilesTirados;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -144,10 +222,12 @@ public class AccionPlanetas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonAtacar;
+    private javax.swing.JButton jButtonDefender;
+    private javax.swing.JComboBox<String> jComboBoxAtacarEquipos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField jTextFieldAtacar;
+    private javax.swing.JTextField jTextFieldDefender;
     // End of variables declaration//GEN-END:variables
 }
