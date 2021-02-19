@@ -21,26 +21,22 @@ public class AccionPlanetas extends javax.swing.JDialog {
      */
     private int jugador = 0;
     private List<Planeta> planetas;
-    
+    private static int ncontador=0;
     private int atacado = 0;
     private int misilesTirados  = 0;
     
-    
-    public AccionPlanetas() {
-        super();
+ 
+    public AccionPlanetas(List<Planeta> planetas,int i){
+        this.jugador = i;
+        this.planetas = planetas;
         initComponents();
-        this.setModal(true);
-        this.setVisible(true);
         jTextFieldAtacar.setVisible(false);
         jTextFieldDefender.setVisible(false);
         jComboBoxAtacarEquipos.setVisible(false);
+        this.setModal(true);
+        this.setVisible(true);
         
-    }
-    
-    public AccionPlanetas(List<Planeta> planetas,int i){
-        this();
-        this.jugador = i;
-        this.planetas = planetas;
+        
     }
 
 
@@ -63,7 +59,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
 
         jLabel1.setText("Planeta Maricon");
 
-        jLabel3.setText("JorgitoSuperStar");
+        jLabel3.setText(planetas.get(jugador).getNombre());
 
         jButtonAtacar.setText("Atacar");
         jButtonAtacar.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +88,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(135, 135, 135))
             .addGroup(layout.createSequentialGroup()
@@ -189,37 +185,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AccionPlanetas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AccionPlanetas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AccionPlanetas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AccionPlanetas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AccionPlanetas().setVisible(true);
-            }
-        });
-    }
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAtacar;

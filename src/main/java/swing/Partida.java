@@ -75,34 +75,34 @@ public class Partida {
         { 
             case "Sejuani": 
                 System.out.println("Sejuani switch "); 
-                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                restipoplaneta = new PlanetaSejuani(x, NombrePlaneta, this);
                 System.out.println(NombrePlaneta);
                         
                      
                 break; 
             case "Normal": 
                 System.out.println("Normal switch");
-                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                restipoplaneta = new PlanetaSejuani(x, NombrePlaneta, this);
                   System.out.println(NombrePlaneta);
                 break; 
             case "Gigante": 
                 System.out.println("Gigante switch");
-                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                restipoplaneta = new PlanetaSejuani(x, NombrePlaneta, this);
                   System.out.println(NombrePlaneta);
                 break; 
                    case "Azul": 
                 System.out.println("Azul switch"); 
-                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                restipoplaneta = new PlanetaSejuani(x, NombrePlaneta, this);
                   System.out.println(NombrePlaneta);
                 break; 
             case "Rojo": 
                 System.out.println("Rojo switch"); 
-                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                restipoplaneta = new PlanetaSejuani(x, NombrePlaneta, this);
                   System.out.println(NombrePlaneta);
                 break; 
                    case "Verde": 
                 System.out.println("Verde switch");
-                restipoplaneta = new PlanetaSejuani(x, nom, this);
+                restipoplaneta = new PlanetaSejuani(x, NombrePlaneta, this);
                   System.out.println(NombrePlaneta);
                 break; 
             default:
