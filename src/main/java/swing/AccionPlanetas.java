@@ -8,7 +8,7 @@ package swing;
 
 import coldware.Planeta;
 import java.util.List;
-import java.util.Vector;
+
 import javax.swing.DefaultComboBoxModel;
 
 
@@ -26,6 +26,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
     private static int ncontador=0;
     private int atacado = 0;
     private int misilesTirados  = 0;
+    private boolean atacar;
+    private boolean defender;
     
  
     public AccionPlanetas(List<Planeta> planetas,int i){
@@ -37,7 +39,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldAtacar.setVisible(false);
         jTextFieldDefender.setVisible(false);
         jComboBoxEquipos.setVisible(false);
-        
+        jButtonEjecutar.setVisible(false);
         anadirPlanetasComboBox();
         this.setModal(true);
         this.setVisible(true);
@@ -66,6 +68,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jComboBoxEquipos = new javax.swing.JComboBox<>();
         jTextFieldAtacar = new javax.swing.JTextField();
         jButtonEjecutar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         jLabel1.setText(planetas.get(jugador).getNtipoplaneta());
 
@@ -77,8 +80,6 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jButtonAtacarActionPerformed(evt);
             }
         });
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\J.Infantes\\Documents\\GitHub\\ColdWarSwingBo\\src\\main\\java\\img\\MissFortuneSquare64.png")); // NOI18N
 
         jButtonDefender.setText("Defender");
         jButtonDefender.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +97,20 @@ public class AccionPlanetas extends javax.swing.JDialog {
             }
         });
 
+        jTextFieldAtacar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAtacarActionPerformed(evt);
+            }
+        });
+
         jButtonEjecutar.setText("Ejecutar");
+        jButtonEjecutar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEjecutarActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText(""+planetas.get(jugador).getMisiles_ronda());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,7 +128,9 @@ public class AccionPlanetas extends javax.swing.JDialog {
                         .addGap(184, 184, 184)
                         .addComponent(jLabel2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonAtacar)
                             .addComponent(jComboBoxEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,7 +166,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonAtacar)
-                            .addComponent(jButtonDefender))
+                            .addComponent(jButtonDefender)
+                            .addComponent(jLabel4))
                         .addGap(67, 67, 67)))
                 .addGap(37, 37, 37)
                 .addComponent(jTextFieldAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,8 +185,13 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldAtacar.setVisible(true);
         jTextFieldDefender.setVisible(false);
         jComboBoxEquipos.setVisible(true); 
+        jButtonEjecutar.setVisible(true);
+         atacar=true;
+         defender=false;
         this.setModal(true);
          this.setVisible(true);
+        
+         
         //TEST BAJA 50 MISILES
         
       /* this.misilesTirados = 50;
@@ -194,6 +216,9 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldAtacar.setVisible(false);
         jTextFieldDefender.setVisible(true);
         jComboBoxEquipos.setVisible(false); 
+        jButtonEjecutar.setVisible(false);
+        atacar=false;
+        defender=true;
         this.setModal(true);
          this.setVisible(true);
 // TODO add your handling code here:
@@ -205,6 +230,19 @@ public class AccionPlanetas extends javax.swing.JDialog {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxEquiposActionPerformed
+
+    private void jButtonEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEjecutarActionPerformed
+
+        if (atacar){
+            jComboBoxEquipos.getSelectedItem();
+        jTextFieldAtacar.getText(); 
+        }else if (defender){
+          jTextFieldDefender.getText();  
+            
+        }
+  
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEjecutarActionPerformed
 
    
  
@@ -230,6 +268,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextFieldAtacar;
     private javax.swing.JTextField jTextFieldDefender;
     // End of variables declaration//GEN-END:variables
@@ -237,9 +276,24 @@ public class AccionPlanetas extends javax.swing.JDialog {
     private void imgplaneta() {
 
         
-        if ("Planeta Vampiro".equals(planetas.get(jugador).getNtipoplaneta())){
+        if ("Planeta Sejuani".equals(planetas.get(jugador).getNtipoplaneta())){
              jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\SejuaniSquare64.png")); // NOI18N
        
+        }else if ("Planeta Normal".equals(planetas.get(jugador).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\MissFortuneSquare64.png")); // NOI18N 
+        }else if ("Planeta Gigante".equals(planetas.get(jugador).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\GragasSquare64.png")); // NOI18N 
+        }else if ("Planeta Azul".equals(planetas.get(jugador).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FizzSquare64.png")); // NOI18N 
+        }else if ("Planeta Rojo".equals(planetas.get(jugador).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\BrandSquare64.png")); // NOI18N 
+        }else if ("Planeta Verde".equals(planetas.get(jugador).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\IvernSquare64.png")); // NOI18N 
         }
         
     }
