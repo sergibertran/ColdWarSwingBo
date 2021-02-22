@@ -279,7 +279,7 @@ public class Partida {
 					throw new IllegalArgumentException();
 				}
 				if (x != 1) {
-					misiles_ronda
+					
 					for (int i = 0; i < planetas.size(); i++) {
 						nombre2 = planetas.get(i).getNombre();
 						if (nom.equals(nombre2)) {
