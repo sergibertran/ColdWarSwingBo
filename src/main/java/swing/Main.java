@@ -5,6 +5,7 @@
  */
 package swing;
 
+import coldware.Reproductor;
 import javax.swing.JLabel;
 
 /**
@@ -19,7 +20,7 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
    static int onoff = 0;
-
+Reproductor MP3 = new Reproductor();
     public Main() {
         this.setBounds(80,30,3,40);
         
@@ -151,9 +152,11 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
     onoff++;
     
     if (onoff % 2==0){
+        MP3.stop();
         jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada.png")); // NOI18N
     }else{
-        
+        MP3 = new Reproductor();
+	MP3.start();
         jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica activa.png")); // NOI18N
     }
      
