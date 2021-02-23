@@ -69,17 +69,18 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldAtacar = new javax.swing.JTextField();
         jButtonEjecutar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText(planetas.get(jugador).getNtipoplaneta());
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 40, 85, -1));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("Tipo Planeta:  "+planetas.get(jugador).getNtipoplaneta());
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, 210, -1));
 
-        jLabel3.setText(planetas.get(jugador).getNombre());
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 40, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Nombre Planeta:  "+planetas.get(jugador).getNombre());
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jButtonAtacar.setText("Atacar");
         jButtonAtacar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,8 +88,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jButtonAtacarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 134, -1, -1));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 72, -1, -1));
+        getContentPane().add(jButtonAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 90, 70));
 
         jButtonDefender.setText("Defender");
         jButtonDefender.addActionListener(new java.awt.event.ActionListener() {
@@ -96,10 +97,10 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jButtonDefenderActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 134, -1, -1));
+        getContentPane().add(jButtonDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, -1, -1));
 
         jTextFieldDefender.setText(" ");
-        getContentPane().add(jTextFieldDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 204, 39, -1));
+        getContentPane().add(jTextFieldDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 39, -1));
 
         jComboBoxEquipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxEquipos.addActionListener(new java.awt.event.ActionListener() {
@@ -107,14 +108,14 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jComboBoxEquiposActionPerformed(evt);
             }
         });
-        getContentPane().add(jComboBoxEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 204, -1, -1));
+        getContentPane().add(jComboBoxEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
         jTextFieldAtacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAtacarActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 261, 36, -1));
+        getContentPane().add(jTextFieldAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, 36, -1));
 
         jButtonEjecutar.setText("Ejecutar");
         jButtonEjecutar.addActionListener(new java.awt.event.ActionListener() {
@@ -124,17 +125,14 @@ public class AccionPlanetas extends javax.swing.JDialog {
         });
         getContentPane().add(jButtonEjecutar, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 299, -1, -1));
 
-        jLabel4.setText(""+planetas.get(jugador).getMisiles_ronda());
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 138, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("Misiles disponibles:  "+planetas.get(jugador).getMisiles_ronda());
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 150, -1));
 
-        jLabel5.setText("Vida");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 111, -1, -1));
-
-        jLabel6.setText(""+planetas.get(jugador).getVidas());
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 111, -1, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondoaccionplanetas.jpg")); // NOI18N
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 410));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setText("Vida:  "+planetas.get(jugador).getVidas());
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 120, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 650, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -234,7 +232,6 @@ public class AccionPlanetas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextFieldAtacar;
