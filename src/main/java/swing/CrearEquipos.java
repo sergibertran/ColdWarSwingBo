@@ -7,8 +7,11 @@ package swing;
 
 import coldware.Planeta;
 import coldware.tipoplanetas.PlanetaNormal;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,10 +32,24 @@ public class CrearEquipos extends javax.swing.JFrame {
     private String[] tipos = new String[]{"Elije planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde"};
     public CrearEquipos() {
         initComponents();
+        jPanel1.setOpaque(true);
+       JLabel myLabel = new JLabel();
+
+
+        
     }
 
     CrearEquipos(ControlPartida aThis) {
+        
+        
        initComponents();
+        jPanel1.setOpaque(false);
+        
+    
+       
+        getContentPane().setBackground(Color.YELLOW);
+        
+        
        control = aThis;
     }
     
@@ -44,7 +61,9 @@ public class CrearEquipos extends javax.swing.JFrame {
             contJugadores++;
             JLabel jLabel = new javax.swing.JLabel();
             JPanel jPanel = new javax.swing.JPanel();
-              
+             
+            jPanel.setOpaque(false);
+            
             final JLabel jLabelimg = new javax.swing.JLabel();
             JTextField jTextField = new JTextField();
             JComboBox<String> jComboBox = new JComboBox<String>();
@@ -59,7 +78,9 @@ public class CrearEquipos extends javax.swing.JFrame {
             jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(tipos));
             jPanel.add(jComboBox);
             jPanel.add(jLabelimg);
+          
             jPanel1.add(jPanel);
+            
             
             
             
@@ -102,13 +123,17 @@ public class CrearEquipos extends javax.swing.JFrame {
         btn_create = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelEquipos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         labelEquipos.setText("Crear Equipos");
         labelEquipos.setToolTipText("");
+        getContentPane().add(labelEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 11, 169, 28));
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setOpaque(false);
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 45, 713, 400));
 
         btn_add.setText("Añadir");
         btn_add.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +141,7 @@ public class CrearEquipos extends javax.swing.JFrame {
                 btn_addActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 451, -1, -1));
 
         btn_create.setText("Crear");
         btn_create.addActionListener(new java.awt.event.ActionListener() {
@@ -123,40 +149,7 @@ public class CrearEquipos extends javax.swing.JFrame {
                 btn_createActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 713, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_add)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_create)
-                        .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(labelEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(114, 114, 114))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_add)
-                    .addComponent(btn_create))
-                .addContainerGap())
-        );
+        getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 451, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

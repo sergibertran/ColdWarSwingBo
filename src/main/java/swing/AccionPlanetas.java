@@ -71,10 +71,15 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText(planetas.get(jugador).getNtipoplaneta());
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 40, 85, -1));
 
         jLabel3.setText(planetas.get(jugador).getNombre());
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 40, -1, -1));
 
         jButtonAtacar.setText("Atacar");
         jButtonAtacar.addActionListener(new java.awt.event.ActionListener() {
@@ -82,6 +87,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jButtonAtacarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 134, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 72, -1, -1));
 
         jButtonDefender.setText("Defender");
         jButtonDefender.addActionListener(new java.awt.event.ActionListener() {
@@ -89,8 +96,10 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jButtonDefenderActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 134, -1, -1));
 
         jTextFieldDefender.setText(" ");
+        getContentPane().add(jTextFieldDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 204, 39, -1));
 
         jComboBoxEquipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxEquipos.addActionListener(new java.awt.event.ActionListener() {
@@ -98,12 +107,14 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jComboBoxEquiposActionPerformed(evt);
             }
         });
+        getContentPane().add(jComboBoxEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 204, -1, -1));
 
         jTextFieldAtacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldAtacarActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextFieldAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 261, 36, -1));
 
         jButtonEjecutar.setText("Ejecutar");
         jButtonEjecutar.addActionListener(new java.awt.event.ActionListener() {
@@ -111,86 +122,19 @@ public class AccionPlanetas extends javax.swing.JDialog {
                 jButtonEjecutarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonEjecutar, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 299, -1, -1));
 
         jLabel4.setText(""+planetas.get(jugador).getMisiles_ronda());
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 138, -1, -1));
 
         jLabel5.setText("Vida");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 111, -1, -1));
 
         jLabel6.setText(""+planetas.get(jugador).getVidas());
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 111, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonEjecutar)
-                .addGap(109, 109, 109))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(184, 184, 184)
-                            .addComponent(jLabel2))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(53, 53, 53)
-                            .addComponent(jLabel4)
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButtonAtacar)
-                                .addComponent(jComboBoxEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(9, 9, 9)
-                                    .addComponent(jTextFieldAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButtonDefender)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(19, 19, 19)
-                                    .addComponent(jTextFieldDefender, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBoxEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextFieldDefender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonAtacar)
-                            .addComponent(jButtonDefender)
-                            .addComponent(jLabel4))
-                        .addGap(67, 67, 67)))
-                .addGap(37, 37, 37)
-                .addComponent(jTextFieldAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonEjecutar)
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondoaccionplanetas.jpg")); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -292,6 +236,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextFieldAtacar;
     private javax.swing.JTextField jTextFieldDefender;
     // End of variables declaration//GEN-END:variables
