@@ -121,6 +121,7 @@ public class CrearEquipos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btn_add = new javax.swing.JButton();
         btn_create = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,6 +151,10 @@ public class CrearEquipos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 451, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondoaccionplanetas.jpg")); // NOI18N
+      
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 1490, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -248,6 +253,7 @@ public class CrearEquipos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_create;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelEquipos;
     // End of variables declaration//GEN-END:variables

@@ -109,6 +109,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldDefender.setText(" ");
         getContentPane().add(jTextFieldDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 39, -1));
 
+        jComboBoxEquipos.setBackground(new java.awt.Color(255, 170, 0));
         jComboBoxEquipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxEquipos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
