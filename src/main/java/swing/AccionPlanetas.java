@@ -81,7 +81,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jLabel3.setText(planetas.get(jugador).getNtipoplaneta());
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
 
-        jButtonAtacar.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\ATACAR.png")); // NOI18N
+        jButtonAtacar.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\ATACAR.png")); // NOI18N
         jButtonAtacar.setBorder(null);
         jButtonAtacar.setBorderPainted(false);
         jButtonAtacar.setContentAreaFilled(false);
@@ -94,7 +94,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         getContentPane().add(jButtonAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 70, 80));
 
-        jButtonDefender.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\DEFENDER.png")); // NOI18N
+        jButtonDefender.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\DEFENDER.png")); // NOI18N
         jButtonDefender.setBorder(null);
         jButtonDefender.setBorderPainted(false);
         jButtonDefender.setContentAreaFilled(false);
@@ -180,7 +180,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldAtacar.setVisible(false);
         jTextFieldDefender.setVisible(true);
         jComboBoxEquipos.setVisible(false); 
-        jButtonEjecutar.setVisible(false);
+        jButtonEjecutar.setVisible(true);
         atacar=false;
         defender=true;
         this.setModal(true);
@@ -197,8 +197,6 @@ public class AccionPlanetas extends javax.swing.JDialog {
 
     private void jButtonEjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEjecutarActionPerformed
 
-     
- 
         
         if (atacar){
             jComboBoxEquipos.getSelectedItem();
@@ -206,7 +204,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
          this.misilesTirados = Integer.parseInt(jTextFieldAtacar.getText());
         for(int j = 0; j < planetas.size();j++){
             if(this.planetas.get(j).getNombre().equals(jComboBoxEquipos.getSelectedItem())){
-                this.atacado =j;
+                this.atacado =j+1;
                 break;
             }
         }
