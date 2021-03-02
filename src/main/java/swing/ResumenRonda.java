@@ -4,76 +4,25 @@
  * and open the template in the editor.
  */
 package swing;
-
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import static swing.CrearEquipos.contJugadores;
-
+import coldware.Planeta;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
- * @author Alex
+ * @author DAW2
  */
 public class ResumenRonda extends javax.swing.JFrame {
 
     /**
      * Creates new form ResumenRonda
      */
-    public ResumenRonda() {
+    public ResumenRonda(ArrayList <String> movimientos) {
         initComponents();
-           addEquipo(3);
+        System.out.println("Patata");
+     
+            System.out.println(movimientos);
         
-    }
-private void addEquipo(int a){
-      
-        
-        
-        for (int i = 0; i < a; i++) {
-            contJugadores++;
-            JLabel jLabel = new javax.swing.JLabel();
-            JPanel jPanel = new javax.swing.JPanel();
-              
-            final JLabel jLabelimg = new javax.swing.JLabel();
-            JTextField jTextField = new JTextField();
-            JComboBox<String> jComboBox = new JComboBox<String>();
-            jPanel.setMinimumSize(new java.awt.Dimension(133, 20));
-            jLabel.setText("Planeta "+(contJugadores+1)+":");
-            jPanel.add(jLabel);
-            jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
-            
-            jTextField.setColumns(25);
-            jPanel.add(jTextField);
-
-           
-            jPanel.add(jComboBox);
-            jPanel.add(jLabelimg);
-           
-            
-            
-            
-            jComboBox.addActionListener((arg0) -> {
-
-                if ("Sejuani".equals(jComboBox.getSelectedItem())) {
-                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\SejuaniSquare64.png")); // NOI18N
-                }else if ("Normal".equals(jComboBox.getSelectedItem())) {
-                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\MissFortuneSquare64.png")); // NOI18N
-                }else if ("Elije planeta".equals(jComboBox.getSelectedItem())) {
-                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
-                }else if ("Gigante".equals(jComboBox.getSelectedItem())) {
-                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\GragasSquare64.png")); // NOI18N
-                }else if ("Azul".equals(jComboBox.getSelectedItem())) {
-                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FizzSquare64.png")); // NOI18N
-                }else if ("Rojo".equals(jComboBox.getSelectedItem())) {
-                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\BrandSquare64.png")); // NOI18N
-                }else if ("Verde".equals(jComboBox.getSelectedItem())) {
-                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\IvernSquare64.png")); // NOI18N
-                }
-          }              
-);
-            
-            
-        }
+             
     }
 
     /**
@@ -91,11 +40,11 @@ private void addEquipo(int a){
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -104,37 +53,7 @@ private void addEquipo(int a){
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ResumenRonda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ResumenRonda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ResumenRonda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ResumenRonda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ResumenRonda().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

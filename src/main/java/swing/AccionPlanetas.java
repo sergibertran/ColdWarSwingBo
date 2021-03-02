@@ -51,12 +51,14 @@ public class AccionPlanetas extends javax.swing.JDialog {
         this.setModal(true);
         this.setVisible(true);
         
-        
+       
         
         
         
     }
 
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
