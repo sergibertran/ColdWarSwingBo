@@ -10,6 +10,7 @@ import coldware.Planeta;
 import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.SpinnerNumberModel;
 
 
 /**
@@ -35,12 +36,17 @@ public class AccionPlanetas extends javax.swing.JDialog {
         this.jugador = i;
         this.planetas = planetas;
         initComponents();
+        jSpinnerAtacar.setModel(new SpinnerNumberModel(0,0,planetas.get(jugador).getMisiles_ronda(),1));
+        jSpinnerDefender.setModel(new SpinnerNumberModel(0,0,planetas.get(jugador).getMisiles_ronda()/2,1));
+       
         imgplaneta();
        jLabel7.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondoaccionplanetas1.jpg")); // NOI18N
         jTextFieldAtacar.setVisible(false);
         jTextFieldDefender.setVisible(false);
         jComboBoxEquipos.setVisible(false);
         jButtonEjecutar.setVisible(false);
+        jSpinnerAtacar.setVisible(false);
+        jSpinnerDefender.setVisible(false);
         anadirPlanetasComboBox();
         this.setModal(true);
         this.setVisible(true);
@@ -72,6 +78,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jSpinnerAtacar = new javax.swing.JSpinner();
+        jSpinnerDefender = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,7 +93,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jButtonAtacar.setBorder(null);
         jButtonAtacar.setBorderPainted(false);
         jButtonAtacar.setContentAreaFilled(false);
-        jButtonAtacar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAtacar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAtacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAtacarActionPerformed(evt);
@@ -98,7 +106,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jButtonDefender.setBorder(null);
         jButtonDefender.setBorderPainted(false);
         jButtonDefender.setContentAreaFilled(false);
-        jButtonDefender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDefender.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonDefender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDefenderActionPerformed(evt);
@@ -106,7 +114,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         });
         getContentPane().add(jButtonDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
 
-        jTextFieldDefender.setText("");
+        jTextFieldDefender.setText(" ");
         getContentPane().add(jTextFieldDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 39, -1));
 
         jComboBoxEquipos.setBackground(new java.awt.Color(255, 170, 0));
@@ -145,6 +153,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(planetas.get(jugador).getNombre());
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+        getContentPane().add(jSpinnerAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 50, 40));
+        getContentPane().add(jSpinnerDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, -1, -1));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 360));
 
         pack();
@@ -157,6 +167,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldDefender.setVisible(false);
         jComboBoxEquipos.setVisible(true); 
         jButtonEjecutar.setVisible(true);
+        jSpinnerAtacar.setVisible(true);
+        jSpinnerDefender.setVisible(false);
          atacar=true;
          defender=false;
         this.setModal(true);
@@ -181,6 +193,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextFieldDefender.setVisible(true);
         jComboBoxEquipos.setVisible(false); 
         jButtonEjecutar.setVisible(true);
+        jSpinnerAtacar.setVisible(false);
+        jSpinnerDefender.setVisible(true);
         atacar=false;
         defender=true;
         this.setModal(true);
@@ -200,8 +214,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
         
         if (atacar){
             jComboBoxEquipos.getSelectedItem();
-     
-         this.misilesTirados = Integer.parseInt(jTextFieldAtacar.getText());
+        
+         this.misilesTirados =(Integer)jSpinnerAtacar.getValue();
         for(int j = 0; j < planetas.size();j++){
             if(this.planetas.get(j).getNombre().equals(jComboBoxEquipos.getSelectedItem())){
                 this.atacado =j+1;
@@ -212,7 +226,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         
         }else if (defender){
         
-            this.misilesTirados = Integer.parseInt(jTextFieldDefender.getText());
+            this.misilesTirados = (Integer)jSpinnerDefender.getValue();
            this.atacado =0;
            
             dispose();
@@ -248,6 +262,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JSpinner jSpinnerAtacar;
+    private javax.swing.JSpinner jSpinnerDefender;
     private javax.swing.JTextField jTextFieldAtacar;
     private javax.swing.JTextField jTextFieldDefender;
     // End of variables declaration//GEN-END:variables
