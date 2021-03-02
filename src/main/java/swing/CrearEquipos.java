@@ -29,7 +29,7 @@ public class CrearEquipos extends javax.swing.JFrame {
      */
    static int contJugadores = -1;
     private ControlPartida control;
-    private String[] tipos = new String[]{"Elije planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde"};
+    private String[] tipos = new String[]{"Elije planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde","Vampiro","Zombie"};
     public CrearEquipos() {
         initComponents();
         jPanel1.setOpaque(true);
@@ -100,8 +100,15 @@ public class CrearEquipos extends javax.swing.JFrame {
                     jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\BrandSquare64.png")); // NOI18N
                 }else if ("Verde".equals(jComboBox.getSelectedItem())) {
                     jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\IvernSquare64.png")); // NOI18N
+                }else if ("Vampiro".equals(jComboBox.getSelectedItem())) {
+                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\VladimirSquare.png")); // NOI18N
+                }else if ("Zombie".equals(jComboBox.getSelectedItem())) {
+                    jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\AmumuSquare.png")); // NOI18N
                 }
-          }              
+          
+            
+            
+            }              
 );
             
             

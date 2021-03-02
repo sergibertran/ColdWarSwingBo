@@ -106,7 +106,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         });
         getContentPane().add(jButtonDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, -1));
 
-        jTextFieldDefender.setText(" ");
+        jTextFieldDefender.setText("");
         getContentPane().add(jTextFieldDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 39, -1));
 
         jComboBoxEquipos.setBackground(new java.awt.Color(255, 170, 0));
@@ -211,8 +211,11 @@ public class AccionPlanetas extends javax.swing.JDialog {
        dispose();
         
         }else if (defender){
-          jTextFieldDefender.getText();  
-            
+        
+            this.misilesTirados = Integer.parseInt(jTextFieldDefender.getText());
+           this.atacado =0;
+           
+            dispose();
         }
   
         // TODO add your handling code here:
@@ -270,7 +273,18 @@ public class AccionPlanetas extends javax.swing.JDialog {
         }else if ("Planeta Verde".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\IvernSquare64.png")); // NOI18N 
+        }else if ("Planeta Vampiro".equals(planetas.get(jugador).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\VladimirSquare.png")); // NOI18N 
+        }else if ("Planeta Zombie".equals(planetas.get(jugador).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\AmumuSquare.png")); // NOI18N 
         }
+        
+        
+        
+        
+        
         
     }
 

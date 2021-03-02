@@ -5,8 +5,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 import coldware.tipoplanetas.PlanetaAzul;
-import coldware.tipoplanetas.PlanetaColateral;
-import coldware.tipoplanetas.PlanetaEnano;
 import coldware.tipoplanetas.PlanetaGigante;
 import coldware.tipoplanetas.PlanetaNormal;
 import coldware.tipoplanetas.PlanetaRojo;

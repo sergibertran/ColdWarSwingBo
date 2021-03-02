@@ -12,7 +12,7 @@ public class Reproductor extends Thread {
 
 		try {
 			do {
-				FileInputStream buff = new FileInputStream("music/THEANIMALS.mp3");
+				FileInputStream buff = new FileInputStream("music\\Connessione.mp3");
 				apl = new Player(buff);
 				apl.play();
 			} while (!loop);

@@ -5,8 +5,6 @@ import coldware.*;
 import java.util.Random;
 import java.util.Scanner;
 import coldware.tipoplanetas.PlanetaAzul;
-import coldware.tipoplanetas.PlanetaColateral;
-import coldware.tipoplanetas.PlanetaEnano;
 import coldware.tipoplanetas.PlanetaGigante;
 import coldware.tipoplanetas.PlanetaNormal;
 import coldware.tipoplanetas.PlanetaRojo;
@@ -103,6 +101,16 @@ public class Partida {
                    case "Verde": 
                 System.out.println("Verde switch");
                 restipoplaneta = new PlanetaVerde(x, NombrePlaneta, this);
+                  System.out.println(NombrePlaneta);
+                break; 
+                 case "Vampiro": 
+                System.out.println("Vampiro switch");
+                restipoplaneta = new PlanetaVampiro(x, NombrePlaneta, this);
+                  System.out.println(NombrePlaneta);
+                break; 
+                 case "Zombie": 
+                System.out.println("Zombie switch");
+                restipoplaneta = new PlanetaZombie(x, NombrePlaneta, this);
                   System.out.println(NombrePlaneta);
                 break; 
             default:
