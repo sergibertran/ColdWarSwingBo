@@ -45,6 +45,7 @@ public class CrearEquipos extends javax.swing.JFrame {
         
         
        initComponents();
+       
         jPanel1.setOpaque(false);
         
     
@@ -219,6 +220,7 @@ public class CrearEquipos extends javax.swing.JFrame {
            }
         }
         control.empezar(planetas);
+         this.setExtendedState(ICONIFIED);
         dispose();
     }//GEN-LAST:event_btn_createActionPerformed
 
