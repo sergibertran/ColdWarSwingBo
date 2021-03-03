@@ -163,7 +163,7 @@ public class CrearEquipos extends javax.swing.JFrame {
         });
         getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 220, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondocrearequipos1.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondocrearequipos1.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 510));
 
         pack();
