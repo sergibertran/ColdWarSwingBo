@@ -242,6 +242,7 @@ public class Partida {
 
         printarInfo();
         ResumenRonda Resumen =new ResumenRonda(movimientos);
+        Resumen.setVisible(true);
         contRondas++;
 
     }
