@@ -17,6 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
+import java.awt.Color;
+import java.awt.Font; 
 
 /**
  *
@@ -47,7 +49,6 @@ public class CrearEquipos extends javax.swing.JFrame {
         
     
        
-        getContentPane().setBackground(Color.YELLOW);
         
         
        control = aThis;
@@ -68,6 +69,9 @@ public class CrearEquipos extends javax.swing.JFrame {
             JTextField jTextField = new JTextField();
             JComboBox<String> jComboBox = new JComboBox<String>();
             jPanel.setMinimumSize(new java.awt.Dimension(133, 20));
+            
+            Font fuente = new Font("Calibri", 3, 19);
+            jLabel.setFont(fuente);
             jLabel.setText("Planeta "+(contJugadores+1)+":");
             jPanel.add(jLabel);
             jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
@@ -124,39 +128,43 @@ public class CrearEquipos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelEquipos = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btn_add = new javax.swing.JButton();
         btn_create = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelEquipos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        labelEquipos.setText("Crear Equipos");
-        labelEquipos.setToolTipText("");
-        getContentPane().add(labelEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 11, 169, 28));
-
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setOpaque(false);
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 420));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 570, 410));
 
-        btn_add.setText("Añadir");
+        btn_add.setBorder(null);
+        btn_add.setBorderPainted(false);
+        btn_add.setContentAreaFilled(false);
+        btn_add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 451, -1, -1));
+        getContentPane().add(btn_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 180, 40));
 
-        btn_create.setText("Crear");
+        btn_create.setBorder(null);
+        btn_create.setBorderPainted(false);
+        btn_create.setContentAreaFilled(false);
+        btn_create.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_createActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 451, -1, -1));
+        getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 220, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondocrearequipos1.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -255,7 +263,7 @@ public class CrearEquipos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_create;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel labelEquipos;
     // End of variables declaration//GEN-END:variables
 }
