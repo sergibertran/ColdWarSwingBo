@@ -129,7 +129,7 @@ this.setSize(screenWidth, screenHeight);
         });
         getContentPane().add(jComboBoxEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 150, -1));
 
-        jButtonEjecutar.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\EJECUTAR.png")); // NOI18N
+        jButtonEjecutar.setIcon(new javax.swing.ImageIcon("\\src\\main\\java\\img\\EJECUTAR.png")); // NOI18N
         jButtonEjecutar.setBorder(null);
         jButtonEjecutar.setBorderPainted(false);
         jButtonEjecutar.setContentAreaFilled(false);
@@ -158,7 +158,7 @@ this.setSize(screenWidth, screenHeight);
         getContentPane().add(jSpinnerAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 60, 30));
         getContentPane().add(jSpinnerDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 50, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondoaccionplanetas2.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondoaccionplanetas2.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 570));
 
         pack();
