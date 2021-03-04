@@ -8,7 +8,7 @@ import coldware.Planeta;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JDialog;
-import sun.security.x509.CRLDistributionPointsExtension;
+
 /**
  *
  * @author DAW2

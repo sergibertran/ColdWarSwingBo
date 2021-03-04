@@ -57,7 +57,7 @@ public class Partida {
             ronda();
 
         }
-
+        ganador ganador =new ganador(planetas);
         mostrarGanador();
         Planeta.reiniciarnumequipos();
 

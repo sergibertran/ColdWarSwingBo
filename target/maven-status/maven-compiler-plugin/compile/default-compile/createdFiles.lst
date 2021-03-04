@@ -14,6 +14,7 @@ swing\AccionPlanetas$3.class
 coldware\Main.class
 swing\ControlPartida.class
 coldware\ConexionBD.class
+swing\ganador.class
 swing\Main$2.class
 swing\reglas$1.class
 swing\CrearEquipos.class
