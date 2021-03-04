@@ -241,7 +241,7 @@ public class Partida {
         }
 
         printarInfo();
-        ResumenRonda Resumen =new ResumenRonda(movimientos);
+        ResumenRonda Resumen =new ResumenRonda(movimientos,planetas);
         Resumen.setVisible(true);
         contRondas++;
 

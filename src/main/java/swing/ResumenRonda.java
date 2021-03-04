@@ -18,17 +18,33 @@ public class ResumenRonda extends javax.swing.JDialog {
     /**
      * Creates new form ResumenRonda
      */
-    public ResumenRonda(ArrayList <String> movimientos) {
+    public ResumenRonda(ArrayList <String> movimientos,List<Planeta> planetas) {
         initComponents();
-        
+        String stringMovimientos="";
+         String stringVidas="";
          this.setModal(true);
          
         System.out.println("Patata");
+ 
      
-        System.out.println(movimientos);
-        
+        for (int i = 0; i < movimientos.size(); i++) {
+            
+            stringMovimientos=stringMovimientos+movimientos.get(i)+" +10 segundos \n";
+             jTextArea1.setText(stringMovimientos);
+             
+             
+        }
+        for (int i = 0; i < planetas.size(); i++) {
+           
+            stringVidas=stringVidas+ planetas.get(i).getNombre()+" tiene "+planetas.get(i).getVidas()+"\n ";
+             jTextArea2.setText(stringVidas);
+            
+            
+        }
+      
              
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -39,11 +55,28 @@ public class ResumenRonda extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("asda");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, 700, 210));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 550, 210));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 320, 300));
 
         jButton1.setText("SALIR");
@@ -53,8 +86,6 @@ public class ResumenRonda extends javax.swing.JDialog {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 700, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondoresumenronda1.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
 
         pack();
@@ -76,5 +107,9 @@ public class ResumenRonda extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
 }

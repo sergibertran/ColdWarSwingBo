@@ -35,7 +35,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
     
  
     public AccionPlanetas(List<Planeta> planetas,int i){
- 
+        String stringVidas="";
         this.jugador = i;
         this.planetas = planetas;
         initComponents();
@@ -44,24 +44,23 @@ public class AccionPlanetas extends javax.swing.JDialog {
        
         imgplaneta();
        
-    
-    
+        for (int j = 0; j < planetas.size(); j++) {
+             stringVidas=stringVidas+ planetas.get(j).getNombre()+" tiene "+planetas.get(j).getVidas()+" vidas\n ";
+             jTextArea1.setText(stringVidas);
+             
+        }
+           
         jComboBoxEquipos.setVisible(false);
         jButtonEjecutar.setVisible(false);
         jSpinnerAtacar.setVisible(false);
         jSpinnerDefender.setVisible(false);
       
         anadirPlanetasComboBox();
+        anadirImagenes();
         this.setModal(true);
         this.setVisible(true);
         
-       Toolkit kit = Toolkit.getDefaultToolkit();
-Dimension screenSize = kit.getScreenSize();
-int screenHeight = screenSize.height;
-int screenWidth = screenSize.width;
-
-this.setSize(screenWidth, screenHeight); 
-        
+   
         
     }
 
@@ -77,6 +76,8 @@ this.setSize(screenWidth, screenHeight);
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jButtonAtacar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -91,6 +92,12 @@ this.setSize(screenWidth, screenHeight);
         jLabel1 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 520, 150));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,7 +136,6 @@ this.setSize(screenWidth, screenHeight);
         });
         getContentPane().add(jComboBoxEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 150, -1));
 
-        jButtonEjecutar.setIcon(new javax.swing.ImageIcon("\\src\\main\\java\\img\\EJECUTAR.png")); // NOI18N
         jButtonEjecutar.setBorder(null);
         jButtonEjecutar.setBorderPainted(false);
         jButtonEjecutar.setContentAreaFilled(false);
@@ -157,9 +163,7 @@ this.setSize(screenWidth, screenHeight);
         jSpinnerAtacar.setModel(new javax.swing.SpinnerListModel(new String[] {"empty"}));
         getContentPane().add(jSpinnerAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 60, 30));
         getContentPane().add(jSpinnerDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 50, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondoaccionplanetas2.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 570));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 80, 1000, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,8 +262,10 @@ this.setSize(screenWidth, screenHeight);
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinnerAtacar;
     private javax.swing.JSpinner jSpinnerDefender;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 
     private void imgplaneta() {
@@ -315,6 +321,12 @@ this.setSize(screenWidth, screenHeight);
         DefaultComboBoxModel Model=new DefaultComboBoxModel(labels);
         jComboBoxEquipos.setModel(Model);
 
+    }
+
+    private void anadirImagenes() {
+        
+        
+        
     }
     
     
