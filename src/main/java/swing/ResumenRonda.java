@@ -5,6 +5,9 @@
  */
 package swing;
 import coldware.Planeta;
+import coldware.Planeta;
+import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JDialog;
@@ -14,29 +17,42 @@ import javax.swing.JDialog;
  * @author DAW2
  */
 public class ResumenRonda extends javax.swing.JDialog {
-
+    
+ private int jugador = 0;
+    private List<Planeta> planetas;
     /**
      * Creates new form ResumenRonda
      */
     public ResumenRonda(ArrayList <String> movimientos,List<Planeta> planetas) {
         initComponents();
+          jTextArea1.setOpaque(true);
+         jTextArea1.setBackground(new Color(0,0,0,0));
+         jTextArea1.setBorder(null);
+         jScrollPane1.setBorder(null);
+          jTextArea2.setOpaque(true);
+         jTextArea2.setBackground(new Color(0,0,0,0));
+         jTextArea2.setBorder(null);
+          jScrollPane2.setBorder(null);
+           
         String stringMovimientos="";
          String stringVidas="";
+         setimagenes();
          this.setModal(true);
-         
-        System.out.println("Patata");
- 
-     
+             Font fuente = new Font("Calibri", 3, 13);
+             Font fuente1 = new Font("Calibri", 3, 14);
+            jTextArea1.setFont(fuente);
+            jTextArea2.setFont(fuente1);
+   
         for (int i = 0; i < movimientos.size(); i++) {
             
-            stringMovimientos=stringMovimientos+movimientos.get(i)+" +10 segundos \n";
+            stringMovimientos=stringMovimientos+movimientos.get(i)+"\n";
              jTextArea1.setText(stringMovimientos);
              
              
         }
         for (int i = 0; i < planetas.size(); i++) {
            
-            stringVidas=stringVidas+ planetas.get(i).getNombre()+" tiene "+planetas.get(i).getVidas()+"\n ";
+            stringVidas=stringVidas+planetas.get(i).getNombre()+" tiene "+planetas.get(i).getVidas()+" vidas\n";
              jTextArea2.setText(stringVidas);
             
             
@@ -67,26 +83,35 @@ public class ResumenRonda extends javax.swing.JDialog {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("asda");
+        jTextArea1.setBorder(null);
+        jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 30, 700, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 860, 180));
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea2.setEnabled(false);
         jScrollPane2.setViewportView(jTextArea2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 550, 210));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 320, 300));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 270, 160));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 190, 190));
 
-        jButton1.setText("SALIR");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 700, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 770));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 323, 150, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondoresumenronda.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -98,6 +123,14 @@ public class ResumenRonda extends javax.swing.JDialog {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+  
+           
+ 
+    void setimagenes(){
+		  jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondoresumenronda.jpg")); // NOI18N
+		
+        
+    }
     /**
      * @param args the command line arguments
      */

@@ -41,19 +41,23 @@ public class AccionPlanetas extends javax.swing.JDialog {
         this.planetas = planetas;
         initComponents();
         anadirImagenes();
-         jTextArea1.setOpaque(true);
-         jTextArea1.setBackground(new Color(0,0,0,0));
+       
+         jTextArea1.setBackground(new Color(10,0,0,0));
+          jTextArea1.setOpaque(true);
          jTextArea1.setBorder(null);
          jScrollPane1.setBorder(null);
+         jTextArea1.setHighlighter(null);
+         jTextArea1.setEnabled(false);
+      
+        
         jSpinnerAtacar.setModel(new SpinnerNumberModel(0,0,planetas.get(jugador).getMisiles_ronda(),1));
         jSpinnerDefender.setModel(new SpinnerNumberModel(0,0,planetas.get(jugador).getMisiles_ronda()/2,1));
-       
+  
         imgplaneta();
        
         for (int j = 0; j < planetas.size(); j++) {
              stringVidas=stringVidas+ planetas.get(j).getNombre()+" tiene "+planetas.get(j).getVidas()+" vidas\n ";
              jTextArea1.setText(stringVidas);
-             
         }
            
         jComboBoxEquipos.setVisible(false);
@@ -93,6 +97,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jSpinnerAtacar = new javax.swing.JSpinner();
         jSpinnerDefender = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
@@ -106,7 +111,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 300, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 300, 130));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,7 +141,6 @@ public class AccionPlanetas extends javax.swing.JDialog {
         });
         getContentPane().add(jButtonDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 190, 210, 40));
 
-        jComboBoxEquipos.setBackground(new java.awt.Color(255, 170, 0));
         jComboBoxEquipos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxEquipos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,17 +162,21 @@ public class AccionPlanetas extends javax.swing.JDialog {
         getContentPane().add(jButtonEjecutar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 440, 250, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("Misiles:  "+planetas.get(jugador).getMisiles_ronda());
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 100, 30));
+        jLabel4.setText("Misiles Ataque:  "+planetas.get(jugador).getMisiles_ronda());
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 120, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Vida:  "+planetas.get(jugador).getVidas());
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 110, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 110, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText(planetas.get(jugador).getNombre());
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, 30));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setText("Misiles Defensa:  "+planetas.get(jugador).getMisiles_ronda()/2);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 120, 20));
 
         jSpinnerAtacar.setModel(new javax.swing.SpinnerListModel(new String[] {"empty"}));
         getContentPane().add(jSpinnerAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 60, 30));
@@ -274,6 +282,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinnerAtacar;
     private javax.swing.JSpinner jSpinnerDefender;
