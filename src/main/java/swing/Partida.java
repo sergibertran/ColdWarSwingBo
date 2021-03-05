@@ -49,15 +49,17 @@ public class Partida {
         this.planetas = planetas;
 
         // se repite todo el rato hasta que quede 1 planeta vivo o 0 vivos
-        while (planetas.size() > 1) {
+        while (this.planetas.size() > 1) {
 
-            comprobarEquiposVivos();
 
             // empieza la ronda
             ronda();
-
+            System.out.println(this.planetas.size());
         }
-        ganador ganador =new ganador(planetas);
+        System.out.println("sale");
+        
+        ganador ganador =new ganador(this.planetas);
+        ganador.setVisible(true);
         mostrarGanador();
         Planeta.reiniciarnumequipos();
 
@@ -241,7 +243,9 @@ public class Partida {
         }
 
         printarInfo();
+        System.out.println(planetas.size()+" despues d printar");
         ResumenRonda Resumen =new ResumenRonda(movimientos,planetas);
+        System.out.println(planetas.size()+" despues d resumen");
         Resumen.setVisible(true);
         contRondas++;
 
