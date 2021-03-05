@@ -17,6 +17,7 @@ public class informacion extends javax.swing.JFrame {
     public informacion() {
         initComponents();
         this.setVisible(true);
+          this.setResizable(false);
     }
 
     /**

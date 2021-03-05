@@ -47,8 +47,8 @@ public class CrearEquipos extends javax.swing.JFrame {
        initComponents();
        
         jPanel1.setOpaque(false);
-        
-    
+        this.setResizable(false);
+        this.setBounds(450,200,1027,550);
        
         
         
@@ -219,8 +219,11 @@ public class CrearEquipos extends javax.swing.JFrame {
                planetas.add(control.getPartida().crearPlanetas(i, TipoPlaneta,NombrePlaneta ));
            }
         }
+         this.setVisible(false);
         control.empezar(planetas);
+       
          this.setExtendedState(ICONIFIED);
+         
         dispose();
     }//GEN-LAST:event_btn_createActionPerformed
 

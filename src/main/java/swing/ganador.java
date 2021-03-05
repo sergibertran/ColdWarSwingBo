@@ -19,6 +19,8 @@ public class ganador extends javax.swing.JFrame {
      */
     public ganador(List<Planeta> planetas) {
         initComponents();
+          this.setResizable(false);
+             this.setBounds(450,200,1200,800); 
         addimg();
         //jLabel1.setText(planetas.get(0).getNombre());
     }
@@ -59,6 +61,8 @@ public class ganador extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+        new Main();
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

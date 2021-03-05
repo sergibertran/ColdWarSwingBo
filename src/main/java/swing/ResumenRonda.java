@@ -25,6 +25,9 @@ public class ResumenRonda extends javax.swing.JDialog {
      */
     public ResumenRonda(ArrayList <String> movimientos,List<Planeta> planetas) {
         initComponents();
+          this.setResizable(false);
+           this.setBounds(450,200,1015,550);
+          
           jTextArea1.setOpaque(true);
          jTextArea1.setBackground(new Color(0,0,0,0));
          jTextArea1.setBorder(null);
@@ -33,6 +36,7 @@ public class ResumenRonda extends javax.swing.JDialog {
          jTextArea2.setBackground(new Color(0,0,0,0));
          jTextArea2.setBorder(null);
           jScrollPane2.setBorder(null);
+          
            
         String stringMovimientos="";
          String stringVidas="";

@@ -41,7 +41,8 @@ public class AccionPlanetas extends javax.swing.JDialog {
         this.planetas = planetas;
         initComponents();
         anadirImagenes();
-       
+         this.setResizable(false);
+         this.setBounds(450,200,1000,590);
          jTextArea1.setBackground(new Color(10,0,0,0));
           jTextArea1.setOpaque(true);
          jTextArea1.setBorder(null);

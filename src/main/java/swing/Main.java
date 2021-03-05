@@ -22,10 +22,12 @@ public class Main extends javax.swing.JFrame {
    static int onoff = 0;
 Reproductor MP3 = new Reproductor();
     public Main() {
-        this.setBounds(80,30,3,40);
+        
         
         initComponents();
-        
+        this.setBounds(300,100,1250,750);
+          this.setResizable(false);
+          
         this.setVisible(true);
 jLabel3.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FONDOColdwarSwing.jpg")); // NOI18N
 jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada.png")); // NOI18N
