@@ -7,6 +7,7 @@ package swing;
 
 
 import coldware.Planeta;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.List;
@@ -39,6 +40,11 @@ public class AccionPlanetas extends javax.swing.JDialog {
         this.jugador = i;
         this.planetas = planetas;
         initComponents();
+        anadirImagenes();
+         jTextArea1.setOpaque(true);
+         jTextArea1.setBackground(new Color(0,0,0,0));
+         jTextArea1.setBorder(null);
+         jScrollPane1.setBorder(null);
         jSpinnerAtacar.setModel(new SpinnerNumberModel(0,0,planetas.get(jugador).getMisiles_ronda(),1));
         jSpinnerDefender.setModel(new SpinnerNumberModel(0,0,planetas.get(jugador).getMisiles_ronda()/2,1));
        
@@ -95,9 +101,12 @@ public class AccionPlanetas extends javax.swing.JDialog {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+        jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 520, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 300, 100));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -136,6 +145,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         });
         getContentPane().add(jComboBoxEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 150, -1));
 
+        jButtonEjecutar.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\EJECUTAR.png")); // NOI18N
         jButtonEjecutar.setBorder(null);
         jButtonEjecutar.setBorderPainted(false);
         jButtonEjecutar.setContentAreaFilled(false);
@@ -163,7 +173,9 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jSpinnerAtacar.setModel(new javax.swing.SpinnerListModel(new String[] {"empty"}));
         getContentPane().add(jSpinnerAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 60, 30));
         getContentPane().add(jSpinnerDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 50, 30));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 80, 1000, 570));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondoaccionplanetas2.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -324,6 +336,10 @@ public class AccionPlanetas extends javax.swing.JDialog {
     }
 
     private void anadirImagenes() {
+		
+		  jButtonEjecutar.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\EJECUTAR.png")); // NOI18N
+		  
+		  jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondoaccionplanetas2.jpg")); // NOI18N
         
         
         
