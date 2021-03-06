@@ -15,6 +15,7 @@ coldware\Main.class
 swing\ControlPartida.class
 coldware\ConexionBD.class
 swing\ganador.class
+swing\JTextFieldLimit.class
 swing\Main$2.class
 swing\reglas$1.class
 swing\CrearEquipos.class

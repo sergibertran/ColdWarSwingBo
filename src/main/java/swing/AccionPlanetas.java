@@ -9,6 +9,7 @@ package swing;
 import coldware.Planeta;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.util.List;
 
@@ -43,9 +44,12 @@ public class AccionPlanetas extends javax.swing.JDialog {
         anadirImagenes();
          this.setResizable(false);
          this.setBounds(450,200,1000,590);
+         
+         
          jTextArea1.setBackground(new Color(10,0,0,0));
           jTextArea1.setOpaque(true);
          jTextArea1.setBorder(null);
+         jTextArea1.setFont(new Font ("TimesRoman", Font.BOLD | Font.ITALIC, 13));
          jScrollPane1.setBorder(null);
          jTextArea1.setHighlighter(null);
          jTextArea1.setEnabled(false);
@@ -55,9 +59,9 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jSpinnerDefender.setModel(new SpinnerNumberModel(0,0,planetas.get(jugador).getMisiles_ronda()/2,1));
   
         imgplaneta();
-       
+      
         for (int j = 0; j < planetas.size(); j++) {
-             stringVidas=stringVidas+ planetas.get(j).getNombre()+" tiene "+planetas.get(j).getVidas()+" vidas\n ";
+             stringVidas=stringVidas+"El planeta: "+ planetas.get(j).getNombre()+" tiene => "+planetas.get(j).getVidas()+" vidas\n";
              jTextArea1.setText(stringVidas);
         }
            
@@ -122,7 +126,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jButtonAtacar.setBorder(null);
         jButtonAtacar.setBorderPainted(false);
         jButtonAtacar.setContentAreaFilled(false);
-        jButtonAtacar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAtacar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAtacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAtacarActionPerformed(evt);
@@ -134,7 +138,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jButtonDefender.setBorder(null);
         jButtonDefender.setBorderPainted(false);
         jButtonDefender.setContentAreaFilled(false);
-        jButtonDefender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonDefender.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonDefender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDefenderActionPerformed(evt);
@@ -150,11 +154,10 @@ public class AccionPlanetas extends javax.swing.JDialog {
         });
         getContentPane().add(jComboBoxEquipos, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 150, -1));
 
-        jButtonEjecutar.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\EJECUTAR.png")); // NOI18N
         jButtonEjecutar.setBorder(null);
         jButtonEjecutar.setBorderPainted(false);
         jButtonEjecutar.setContentAreaFilled(false);
-        jButtonEjecutar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEjecutar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonEjecutar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEjecutarActionPerformed(evt);
@@ -182,8 +185,6 @@ public class AccionPlanetas extends javax.swing.JDialog {
         jSpinnerAtacar.setModel(new javax.swing.SpinnerListModel(new String[] {"empty"}));
         getContentPane().add(jSpinnerAtacar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 60, 30));
         getContentPane().add(jSpinnerDefender, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 270, 50, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\fondoaccionplanetas2.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         pack();

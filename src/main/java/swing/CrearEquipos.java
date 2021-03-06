@@ -19,6 +19,10 @@ import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.Font; 
+import javax.swing.JOptionPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 
 /**
  *
@@ -31,7 +35,8 @@ public class CrearEquipos extends javax.swing.JFrame {
      */
    static int contJugadores = -1;
     private ControlPartida control;
-    private String[] tipos = new String[]{"Elije planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde","Vampiro","Zombie"};
+    private String[] tipos = new String[]{"Elige planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde","Vampiro","Zombie"};
+    
     public CrearEquipos() {
         initComponents();
         jPanel1.setOpaque(true);
@@ -78,6 +83,7 @@ public class CrearEquipos extends javax.swing.JFrame {
             jLabelimg.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\QuestionMarkSquare64.png")); // NOI18N
             
             jTextField.setColumns(25);
+            jTextField.setDocument(new JTextFieldLimit(10));
             jPanel.add(jTextField);
 
             jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(tipos));
@@ -195,8 +201,17 @@ public class CrearEquipos extends javax.swing.JFrame {
             String TipoPlaneta = null;
             JPanel jPanelPosicion = (JPanel) jPanel1.getComponent(i);
             for (int j = 0; j < jPanelPosicion.getComponents().length; j++) {
+                
+               
+                
                 if (jPanelPosicion.getComponent(j) instanceof JTextField){
-                    NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();          
+                    NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();  
+                    if(NombrePlaneta.length()==0){
+                     JOptionPane.showMessageDialog(null, "Debes poner un nombre a tu equipo", "Error", JOptionPane.ERROR_MESSAGE);   
+ 
+                        return;
+                        
+                    }
                 } 
                else if (jPanelPosicion.getComponent(j) instanceof JComboBox){
                     TipoPlaneta=(String) ((JComboBox)jPanelPosicion.getComponent(j)).getSelectedItem();
@@ -214,10 +229,17 @@ public class CrearEquipos extends javax.swing.JFrame {
                     
                 }
                  
-            }
-           if(NombrePlaneta != null && TipoPlaneta != null){
+            }try{
+               if(NombrePlaneta.length() != 0 && TipoPlaneta != null){
                planetas.add(control.getPartida().crearPlanetas(i, TipoPlaneta,NombrePlaneta ));
+               
            }
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, "Debes elegir tipo de planeta", "Error", JOptionPane.ERROR_MESSAGE);   
+                return;
+                   
+                   } 
+           
         }
          this.setVisible(false);
         control.empezar(planetas);
@@ -272,3 +294,26 @@ public class CrearEquipos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
+
+class JTextFieldLimit extends PlainDocument {
+  private int limit;
+  JTextFieldLimit(int limit) {
+    super();
+    this.limit = limit;
+  }
+
+  JTextFieldLimit(int limit, boolean upper) {
+    super();
+    this.limit = limit;
+  }
+
+  public void insertString(int offset, String str, AttributeSet attr) throws BadLocationException {
+    if (str == null)
+      return;
+
+    if ((getLength() + str.length()) <= limit) {
+      super.insertString(offset, str, attr);
+    }
+  }
+}
+

@@ -65,6 +65,9 @@ public class Partida {
 
     }
     
+    
+    
+    
      public Planeta crearPlanetas(int x,String TipoPlaneta, String NombrePlaneta){
         
          Planeta restipoplaneta = null;
