@@ -17,6 +17,7 @@ public class informacion extends javax.swing.JFrame {
     public informacion() {
         initComponents();
           this.setBounds(400, 100, 1090, 750);
+          jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\AUTORES.jpg"));
         this.setVisible(true);
           this.setResizable(false);
     }

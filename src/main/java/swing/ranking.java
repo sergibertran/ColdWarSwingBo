@@ -29,6 +29,7 @@ public class ranking extends javax.swing.JFrame {
     public ranking()  {
         initComponents();
           this.setBounds(400, 100, 1090, 750);
+          jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\RANKING.jpg"));
         Font fuente = new Font("Calibri", 3, 19);
             jTextArea2.setFont(fuente);
         jTextArea2.setBackground(Color.orange);
@@ -87,6 +88,7 @@ public class ranking extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,9 +111,10 @@ public class ranking extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 670, 90, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Alex\\Documents\\DAW2\\Programacion\\ColdWarSwingBo\\src\\main\\java\\img\\RANKING.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 720));
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,6 +160,7 @@ public class ranking extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables

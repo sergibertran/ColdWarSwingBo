@@ -7,6 +7,7 @@ coldware\tipoplanetas\PlanetaAzul.class
 swing\ranking.class
 coldware\Partida.class
 swing\Main$4.class
+swing\ranking$2.class
 coldware\tipoplanetas\PlanetaRojo.class
 swing\Main$5.class
 coldware\tipoplanetas\PlanetaGigante.class
@@ -39,6 +40,7 @@ swing\ResumenRonda.class
 coldware\tipoplanetas\PlanetaZombie.class
 swing\AccionPlanetas.class
 swing\CrearEquipos$2.class
+swing\ranking$1.class
 swing\informacion.class
 swing\Main$6.class
 coldware\tipoplanetas\PlanetaVampiro.class
