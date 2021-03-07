@@ -7,6 +7,18 @@ package swing;
 
 import coldware.Planeta;
 import java.util.List;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -22,8 +34,63 @@ public class ganador extends javax.swing.JFrame {
           this.setResizable(false);
              this.setBounds(450,200,1200,800); 
         addimg();
+        
+        HashMap<String, Integer> Ganadores = new HashMap<String, Integer>();
+        File file = new File ("output.xml");
+        XStream xstream=new XStream();
+       
+        ArrayList jugadores1 = null;
+        
+        
+                
+        if (planetas.size()!=0){
+            
+        
+        if (file.exists()){
+        jugadores1 = (ArrayList)xstream.fromXML(file); //lee
+        
+          
+        
+        }else{
+            try {
+                file.createNewFile();
+            } catch (IOException ex) {
+                Logger.getLogger(ganador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        jugadores1 =new ArrayList();    
+        }
+
+        jugadores1.add(planetas.get(0).getNombre()); //añade jugador
+        
+         for (int i = 0; i < jugadores1.size(); i++) {
+            String name=jugadores1.get(i).toString();
+            
+             if (!Ganadores.containsKey(name)){
+                 Ganadores.put(name,1);
+                 
+             }else{
+                  Ganadores.put(name,Ganadores.get(name)+1);
+             }
+  
+            }
+       
+            System.out.println(Ganadores);
+        
+         Writer writer = null;
+         
+        try {
+            writer = new FileWriter("output.xml");
+            } catch (IOException ex) {
+                Logger.getLogger(ganador.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            xstream.toXML(jugadores1, writer);
+        }
+
         //jLabel1.setText(planetas.get(0).getNombre());
     }
+
+  
 
     /**
      * This method is called from within the constructor to initialize the form.

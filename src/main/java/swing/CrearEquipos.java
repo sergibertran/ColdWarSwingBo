@@ -36,7 +36,7 @@ public class CrearEquipos extends javax.swing.JFrame {
    static int contJugadores = -1;
     private ControlPartida control;
     private String[] tipos = new String[]{"Elige planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde","Vampiro","Zombie"};
-    
+  
     public CrearEquipos() {
         initComponents();
         jPanel1.setOpaque(true);
@@ -191,7 +191,8 @@ public class CrearEquipos extends javax.swing.JFrame {
     private void btn_createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_createActionPerformed
 
         List<Planeta> planetas  = new ArrayList<>();
-
+        List Nplanetas = new ArrayList();
+        List Nplanetas2 = new ArrayList();
         // TODO add your handling code here:
         
         
@@ -205,7 +206,9 @@ public class CrearEquipos extends javax.swing.JFrame {
                
                 
                 if (jPanelPosicion.getComponent(j) instanceof JTextField){
-                    NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText();  
+                  
+                    NombrePlaneta=((JTextField)jPanelPosicion.getComponent(j)).getText(); 
+                     Nplanetas.add(NombrePlaneta);
                     if(NombrePlaneta.length()==0){
                      JOptionPane.showMessageDialog(null, "Debes poner un nombre a tu equipo", "Error", JOptionPane.ERROR_MESSAGE);   
  
@@ -229,7 +232,28 @@ public class CrearEquipos extends javax.swing.JFrame {
                     
                 }
                  
-            }try{
+            }
+         
+            
+       
+                 for (int j = 0; j < Nplanetas.size(); j++) {
+
+                 for (int k = 0; k < Nplanetas.size(); k++) {
+                     if (j!=k && Nplanetas.get(j).equals(Nplanetas.get(k))){
+                       
+            
+                     JOptionPane.showMessageDialog(null, "Se repite algun nombre", "Error", JOptionPane.ERROR_MESSAGE);  
+                      }
+                 }
+
+                }
+                 
+            
+                 
+              
+            
+            
+            try{
                if(NombrePlaneta.length() != 0 && TipoPlaneta != null){
                planetas.add(control.getPartida().crearPlanetas(i, TipoPlaneta,NombrePlaneta ));
                
@@ -240,13 +264,28 @@ public class CrearEquipos extends javax.swing.JFrame {
                    
                    } 
            
-        }
+            
+            
+           
+             
+               
+           
+            
+            
+         
+                
+           
+     
+            
          this.setVisible(false);
         control.empezar(planetas);
        
          this.setExtendedState(ICONIFIED);
          
         dispose();
+         
+        }
+        
     }//GEN-LAST:event_btn_createActionPerformed
 
 

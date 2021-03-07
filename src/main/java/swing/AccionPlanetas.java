@@ -240,7 +240,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
          this.misilesTirados =(Integer)jSpinnerAtacar.getValue();
         for(int j = 0; j < planetas.size();j++){
             if(this.planetas.get(j).getNombre().equals(jComboBoxEquipos.getSelectedItem())){
-                this.atacado =j+1;
+                this.atacado =planetas.get(j).getNequipo();
                 break;
             }
         }

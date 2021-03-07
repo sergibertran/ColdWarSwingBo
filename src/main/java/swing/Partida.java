@@ -235,6 +235,8 @@ public class Partida {
             while (planetas.get(i).getMisiles_ronda() > 0) { // mientras tengas misiles entrara
                 AccionPlanetas ap =new AccionPlanetas(planetas,i);
                 ataqueYDefensa(ap.getAtacado(),i,ap.getMisilesTirados());
+                
+                
             }
 
         }
@@ -289,9 +291,10 @@ public class Partida {
             System.out.println(" Introduce los misiles con lo que quieres atacar");
             // caso normal
             for (int j = 0; j < planetas.size(); j++) {
+                
                 // sirve para saber a que planeta estas atacando
                 if (equipoAtacado == planetas.get(j).getNequipo()) {
-
+                    System.out.println("swing.Partida.ataqueYDefensa()");
                     planetas.get(i).setMisilesTiradosRonda(misilesTirados);
 
                     // anadimos misiles atacados y los guardamos en la array de movimientos
