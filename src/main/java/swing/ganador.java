@@ -9,6 +9,7 @@ import coldware.Planeta;
 import java.util.List;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.awt.Font;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,16 +26,17 @@ import java.util.logging.Logger;
  * @author DAW2
  */
 public class ganador extends javax.swing.JFrame {
-
+    
+ private List<Planeta> planetas;
     /**
      * Creates new form ganador
      */
     public ganador(List<Planeta> planetas) {
         initComponents();
           this.setResizable(false);
-             this.setBounds(450,200,1200,800); 
+          this.setBounds(350,150,1195,760);  
         addimg();
-        
+        empate(planetas);
         HashMap<String, Integer> Ganadores = new HashMap<String, Integer>();
         File file = new File ("output.xml");
         XStream xstream=new XStream();
@@ -102,6 +104,8 @@ public class ganador extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -110,16 +114,15 @@ public class ganador extends javax.swing.JFrame {
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 643, 220, 50));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DAW2\\Desktop\\ColdWarSwingBo\\src\\main\\java\\img\\FONDOGANADOR.jpg")); // NOI18N
-        jLabel1.setText("jLabel1aa");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, 160, 150));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 470, 160, 40));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1180, 730));
 
         pack();
@@ -163,6 +166,50 @@ public class ganador extends javax.swing.JFrame {
         
     }
     
+    void empate(List<Planeta> planetas){
+        
+        if(planetas.size()<1){
+            jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\empate.jpg")); // NOI18N
+        }else{
+            addganador(planetas);
+        }
+    }
+    
+     void addganador(List<Planeta> planetas){
+        
+       
+        if ("Planeta Sejuani".equals(planetas.get(0).getNtipoplaneta())){
+             jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\SejuaniSquare1.png")); // NOI18N
+       
+        }else if ("Planeta Normal".equals(planetas.get(0).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\MissFortuneSquare1.png")); // NOI18N 
+        }else if ("Planeta Gigante".equals(planetas.get(0).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\GragasSquare1.png")); // NOI18N 
+        }else if ("Planeta Azul".equals(planetas.get(0).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FizzSquare1.png")); // NOI18N 
+        }else if ("Planeta Rojo".equals(planetas.get(0).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\BrandSquare1.png")); // NOI18N 
+        }else if ("Planeta Verde".equals(planetas.get(0).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\IvernSquare1.png")); // NOI18N 
+        }else if ("Planeta Vampiro".equals(planetas.get(0).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\VladimirSquare1.png")); // NOI18N 
+        }else if ("Planeta Zombie".equals(planetas.get(0).getNtipoplaneta())){
+            
+           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\AmumuSquare1.png")); // NOI18N 
+        }
+        
+        Font fuente = new Font("Calibri", 3, 19);
+            jLabel3.setFont(fuente);
+            jLabel3.setText(planetas.get(0).getNombre());
+            jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FONDOGANADOR.jpg")); // NOI18N
+}
+    
     void addimg(){
 		 jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FONDOGANADOR.jpg")); // NOI18N
         
@@ -171,5 +218,7 @@ public class ganador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

@@ -33,7 +33,7 @@ public class CrearEquipos extends javax.swing.JFrame {
     /**
      * Creates new form CrearEquipos
      */
-   static int contJugadores = -1;
+    int contJugadores = -1;
     private ControlPartida control;
     private String[] tipos = new String[]{"Elige planeta","Normal","Sejuani","Gigante","Rojo","Azul","Verde","Vampiro","Zombie"};
   
