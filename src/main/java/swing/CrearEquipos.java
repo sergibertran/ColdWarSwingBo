@@ -229,6 +229,10 @@ public class CrearEquipos extends javax.swing.JFrame {
             }
 
         }
+          if (planetas.size()<2) {
+                JOptionPane.showMessageDialog(null, "Minimo 2 equipos para jugar", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
         this.setVisible(false);
         control.empezar(planetas);
 

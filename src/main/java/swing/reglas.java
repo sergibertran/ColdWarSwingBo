@@ -18,7 +18,7 @@ public class reglas extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
           this.setResizable(false);
-         this.setBounds(160,0,1090,750);
+         this.setBounds(400, 100, 1090, 750);
          jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\REGLAS.jpg")); // NOI18N
     }
 
