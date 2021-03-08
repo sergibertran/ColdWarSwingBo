@@ -35,7 +35,12 @@ public class ganador extends javax.swing.JFrame {
     public ganador(List<Planeta> planetas) {
         initComponents();
           this.setResizable(false);
-          this.setBounds(350,150,1195,760);  
+     
+            int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+
+       
+         this.setBounds((ancho/2) - (this.getWidth()/2 ), (alto/2 ) - (this.getHeight()/2 ), 1195, 760);
           cursores();
         addimg();
         empate(planetas);

@@ -21,7 +21,12 @@ public class reglas extends javax.swing.JFrame {
         this.setVisible(true);
           this.setResizable(false);
           cursores();
-         this.setBounds(400, 100, 1090, 750);
+        
+            int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+
+       
+         this.setBounds((ancho/4) - (this.getWidth() ), (alto/2-20 ) - (this.getHeight()/2 ), 1090, 750);
          jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\REGLAS.jpg")); // NOI18N
     }
 

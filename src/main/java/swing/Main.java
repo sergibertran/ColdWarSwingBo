@@ -26,7 +26,11 @@ Reproductor MP3 = new Reproductor();
         
         
         initComponents();
-        this.setBounds(300,100,1250,750);
+        int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+
+       
+         this.setBounds((ancho/3) - (this.getWidth()/2 ), (alto/2 ) - (this.getHeight()/2 ), 1250, 750);
           this.setResizable(false);
           cursores();
         this.setVisible(true);

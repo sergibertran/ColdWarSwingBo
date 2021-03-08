@@ -29,7 +29,13 @@ public class ranking extends javax.swing.JFrame {
      */
     public ranking()  {
         initComponents();
-          this.setBounds(400, 100, 1090, 750);
+           this.setResizable(false);
+        
+            int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+
+       
+         this.setBounds((ancho/2) - (this.getWidth()/2 ), (alto/2 ) - (this.getHeight()/2 ), 1090, 750);
           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\RANKING.jpg"));
         Font fuente = new Font("Calibri", 3, 19);
             jTextArea2.setFont(fuente);

@@ -9,6 +9,7 @@ coldware\Partida.class
 swing\Main$4.class
 swing\ranking$2.class
 coldware\tipoplanetas\PlanetaRojo.class
+swing\CrearEquipos$4.class
 swing\Main$5.class
 coldware\tipoplanetas\PlanetaGigante.class
 swing\CrearEquipos$1.class
@@ -28,9 +29,9 @@ swing\CrearEquipos$3.class
 coldware\tipoplanetas\PlanetaNormal.class
 swing\Main$3.class
 swing\Partida.class
+swing\CrearEquipos$5.class
 swing\ganador$1.class
 swing\informacion$2.class
-swing\reglas$3.class
 coldware\Reproductor.class
 swing\AccionPlanetas$2.class
 coldware\tipoplanetas\PlanetaVerde.class

@@ -51,7 +51,12 @@ public class CrearEquipos extends javax.swing.JFrame {
 
         jPanel1.setOpaque(false);
         this.setResizable(false);
-        this.setBounds(450, 200, 1027, 550);
+       
+          int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+
+       
+         this.setBounds((ancho/2) - (this.getWidth()/2 ), (alto/2 ) - (this.getHeight()/2 ), 1027, 550);
         jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\INFORMACION.jpg")); 
          jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondocrearequipos1.jpg")); // NOI18N
          jLabel2.setVisible(false);

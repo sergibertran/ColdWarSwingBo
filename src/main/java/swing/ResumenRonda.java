@@ -27,7 +27,13 @@ public class ResumenRonda extends javax.swing.JDialog {
     public ResumenRonda(ArrayList <String> movimientos,List<Planeta> planetas) {
         initComponents();
           this.setResizable(false);
-           this.setBounds(450,200,1015,550);
+          
+           
+        int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+
+       
+         this.setBounds((ancho/2) - (this.getWidth()/2 ), (alto/2 ) - (this.getHeight()/2 ), 1015, 550);
           cursores();
           jTextArea1.setOpaque(true);
          jTextArea1.setBackground(new Color(0,0,0,0));

@@ -15,6 +15,7 @@ import java.awt.Toolkit;
 import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 
 
@@ -44,7 +45,13 @@ public class AccionPlanetas extends javax.swing.JDialog {
         initComponents();
         anadirImagenes();
          this.setResizable(false);
-         this.setBounds(450,200,1000,590);
+      
+         
+               int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+
+       
+         this.setBounds((ancho/2) - (this.getWidth()/2 ), (alto/2 ) - (this.getHeight()/2 ), 1000, 590);
          
          cursores();
          jTextArea1.setBackground(new Color(10,0,0,0));
@@ -245,12 +252,22 @@ void cursores(){
             jComboBoxEquipos.getSelectedItem();
         
          this.misilesTirados =(Integer)jSpinnerAtacar.getValue();
+            if (this.misilesTirados==0) {
+       
+                JOptionPane.showMessageDialog(null, "No puedes atacar con estos misiles", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            
+            }
+            System.err.println(this.misilesTirados);
         for(int j = 0; j < planetas.size();j++){
+            
             if(this.planetas.get(j).getNombre().equals(jComboBoxEquipos.getSelectedItem())){
                 this.atacado =planetas.get(j).getNequipo();
                 break;
             }
+            
         }
+      
        dispose();
         
         }else if (defender){
