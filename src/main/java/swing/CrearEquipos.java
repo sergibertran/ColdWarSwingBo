@@ -293,7 +293,9 @@ public class CrearEquipos extends javax.swing.JFrame {
         jLabel1.setVisible(false);
         jLabel2.setVisible(true);
         jButton1.setVisible(true);
-        
+        btn_add.setVisible(false);
+        btn_create.setVisible(false);
+        btn_info.setVisible(false);
     }//GEN-LAST:event_btn_infoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -302,6 +304,9 @@ public class CrearEquipos extends javax.swing.JFrame {
         jLabel2.setVisible(false);
         jButton1.setVisible(true);
         jPanel1.setVisible(true);
+         btn_add.setVisible(true);
+        btn_create.setVisible(true);
+        btn_info.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
