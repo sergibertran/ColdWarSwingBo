@@ -7,6 +7,7 @@ package swing;
 
 import com.thoughtworks.xstream.XStream;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.io.File;
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class ranking extends javax.swing.JFrame {
             jTextArea2.setFont(fuente);
         jTextArea2.setBackground(Color.orange);
          jTextArea2.setBorder(null);
-     
+     cursores();
         String ganadore="";
         File file = new File ("output.xml");
         XStream xstream=new XStream();
@@ -118,6 +119,11 @@ public class ranking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    void cursores(){
+        
+        jButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          new Main();

@@ -6,6 +6,7 @@
 package swing;
 
 import coldware.Reproductor;
+import java.awt.Cursor;
 import javax.swing.JLabel;
 
 /**
@@ -27,7 +28,7 @@ Reproductor MP3 = new Reproductor();
         initComponents();
         this.setBounds(300,100,1250,750);
           this.setResizable(false);
-          
+          cursores();
         this.setVisible(true);
 jLabel3.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FONDOColdwarSwing.jpg")); // NOI18N
 jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada.png")); // NOI18N
@@ -127,7 +128,16 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
             
 
  
-    
+       void cursores(){
+        
+        jButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButton2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButton3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButton4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButton5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButton6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }
+       
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new ControlPartida().crearEquipos();
         this.setVisible(false);

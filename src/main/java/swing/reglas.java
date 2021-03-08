@@ -5,6 +5,8 @@
  */
 package swing;
 
+import java.awt.Cursor;
+
 /**
  *
  * @author DAW2
@@ -18,6 +20,7 @@ public class reglas extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
           this.setResizable(false);
+          cursores();
          this.setBounds(400, 100, 1090, 750);
          jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\REGLAS.jpg")); // NOI18N
     }
@@ -32,7 +35,6 @@ public class reglas extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -40,14 +42,6 @@ public class reglas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
 
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
@@ -63,10 +57,6 @@ public class reglas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -108,9 +98,12 @@ public class reglas extends javax.swing.JFrame {
             }
         });
     }
-
+void cursores(){
+        
+        jButton3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;

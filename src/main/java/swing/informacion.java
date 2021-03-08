@@ -5,6 +5,8 @@
  */
 package swing;
 
+import java.awt.Cursor;
+
 /**
  *
  * @author DAW2
@@ -16,6 +18,7 @@ public class informacion extends javax.swing.JFrame {
      */
     public informacion() {
         initComponents();
+        cursores();
           this.setBounds(400, 100, 1090, 750);
           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\AUTORES.jpg"));
         this.setVisible(true);
@@ -59,7 +62,11 @@ public class informacion extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+void cursores(){
+        
+        jButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+     
+    }
     /**
      * @param args the command line arguments
      */

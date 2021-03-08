@@ -9,6 +9,7 @@ import coldware.Planeta;
 import java.util.List;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.io.File;
 import java.io.FileWriter;
@@ -35,6 +36,7 @@ public class ganador extends javax.swing.JFrame {
         initComponents();
           this.setResizable(false);
           this.setBounds(350,150,1195,760);  
+          cursores();
         addimg();
         empate(planetas);
         HashMap<String, Integer> Ganadores = new HashMap<String, Integer>();
@@ -166,6 +168,11 @@ public class ganador extends javax.swing.JFrame {
         
     }
     
+    void cursores(){
+        
+        jButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    
+    }
     void empate(List<Planeta> planetas){
         
         if(planetas.size()<1){

@@ -8,6 +8,7 @@ package swing;
 
 import coldware.Planeta;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -45,7 +46,7 @@ public class AccionPlanetas extends javax.swing.JDialog {
          this.setResizable(false);
          this.setBounds(450,200,1000,590);
          
-         
+         cursores();
          jTextArea1.setBackground(new Color(10,0,0,0));
           jTextArea1.setOpaque(true);
          jTextArea1.setBorder(null);
@@ -190,7 +191,13 @@ public class AccionPlanetas extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+void cursores(){
+        
+        jButtonAtacar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButtonDefender.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButtonEjecutar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
+    }
     private void jButtonAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAtacarActionPerformed
         
      

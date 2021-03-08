@@ -7,6 +7,7 @@ package swing;
 import coldware.Planeta;
 import coldware.Planeta;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class ResumenRonda extends javax.swing.JDialog {
         initComponents();
           this.setResizable(false);
            this.setBounds(450,200,1015,550);
-          
+          cursores();
           jTextArea1.setOpaque(true);
          jTextArea1.setBackground(new Color(0,0,0,0));
          jTextArea1.setBorder(null);
@@ -126,7 +127,11 @@ public class ResumenRonda extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
   
-           
+           void cursores(){
+        
+        jButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+    }
  
     void setimagenes(){
 		  jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondoresumenronda.jpg")); // NOI18N

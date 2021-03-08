@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.text.AttributeSet;
@@ -51,10 +52,22 @@ public class CrearEquipos extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
         this.setResizable(false);
         this.setBounds(450, 200, 1027, 550);
-
+        jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\INFORMACION.jpg")); 
+         jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondocrearequipos1.jpg")); // NOI18N
+         jLabel2.setVisible(false);
+          jLabel1.setVisible(true);
+          jButton1.setVisible(false);
+          cursores();
         control = aThis;
     }
 
+    void cursores(){
+        
+        jButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btn_add.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btn_create.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        btn_info.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }
     private void addEquipo(int a) {
 
         for (int i = 0; i < a; i++) {
@@ -64,6 +77,7 @@ public class CrearEquipos extends javax.swing.JFrame {
 
             jPanel.setOpaque(false);
 
+           
             final JLabel jLabelimg = new javax.swing.JLabel();
             JTextField jTextField = new JTextField();
             JComboBox<String> jComboBox = new JComboBox<String>();
@@ -125,7 +139,10 @@ public class CrearEquipos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btn_add = new javax.swing.JButton();
         btn_create = new javax.swing.JButton();
+        btn_info = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,7 +155,7 @@ public class CrearEquipos extends javax.swing.JFrame {
         btn_add.setBorder(null);
         btn_add.setBorderPainted(false);
         btn_add.setContentAreaFilled(false);
-        btn_add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_add.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addActionPerformed(evt);
@@ -149,7 +166,7 @@ public class CrearEquipos extends javax.swing.JFrame {
         btn_create.setBorder(null);
         btn_create.setBorderPainted(false);
         btn_create.setContentAreaFilled(false);
-        btn_create.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_create.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_createActionPerformed(evt);
@@ -157,8 +174,29 @@ public class CrearEquipos extends javax.swing.JFrame {
         });
         getContentPane().add(btn_create, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 220, 60));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\fondocrearequipos1.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 510));
+        btn_info.setBorder(null);
+        btn_info.setBorderPainted(false);
+        btn_info.setContentAreaFilled(false);
+        btn_info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_infoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 130, 60));
+
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 80, 30));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 520));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("D:\\Alex\\Documents\\DAW2\\Programacion\\ColdWarSwingBo\\src\\main\\java\\img\\INFORMACION.jpg")); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -243,6 +281,25 @@ public class CrearEquipos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_createActionPerformed
 
+    private void btn_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_infoActionPerformed
+        // TODO add your handling code here:
+        
+        jPanel1.setVisible(false);
+        jLabel1.setVisible(false);
+        jLabel2.setVisible(true);
+        jButton1.setVisible(true);
+        
+    }//GEN-LAST:event_btn_infoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here
+          jLabel1.setVisible(true);
+        jLabel2.setVisible(false);
+        jButton1.setVisible(true);
+        jPanel1.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -281,7 +338,10 @@ public class CrearEquipos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_create;
+    private javax.swing.JButton btn_info;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
