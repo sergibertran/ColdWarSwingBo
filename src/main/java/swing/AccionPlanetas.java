@@ -273,6 +273,12 @@ void cursores(){
         }else if (defender){
         
             this.misilesTirados = (Integer)jSpinnerDefender.getValue();
+             if (this.misilesTirados==0) {
+       
+                JOptionPane.showMessageDialog(null, "No puedes defenderte con estos misiles", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            
+            }
            this.atacado =0;
            
             dispose();
