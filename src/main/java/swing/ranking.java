@@ -104,6 +104,7 @@ public class ranking extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jTextArea2.setCaretColor(new java.awt.Color(204, 102, 0));
         jTextArea2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextArea2.setEnabled(false);
         jScrollPane2.setViewportView(jTextArea2);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 488, 320));
