@@ -7,6 +7,8 @@ package swing;
 
 import java.awt.Cursor;
 
+import coldware.ConexionBD;
+
 /**
  *
  * @author DAW2
@@ -28,6 +30,8 @@ public class informacion extends javax.swing.JFrame {
           jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\AUTORES.jpg"));
         this.setVisible(true);
           this.setResizable(false);
+          ConexionBD con = new  ConexionBD();
+          con.crearBD();
     }
 
     /**

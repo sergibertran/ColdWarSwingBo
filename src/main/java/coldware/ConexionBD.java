@@ -8,11 +8,11 @@ public class ConexionBD {
 
 	// JDBC driver name and database URL
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; // driver
-	final static String DB_URL = "jdbc:mysql://localhost:3307/test";// EN CASA ES EL 6 EN CLASE ES UN 7
+	final static String DB_URL = "jdbc:mysql://oracle.ilerna.com/test";// EN CASA ES EL 6 EN CLASE ES UN 7
 
 	// Database credentials
-	final static String USER = "root";
-	final static String PASS = "usbw";
+	final static String USER = "DAW2_GamifikG6";
+	final static String PASS = "aGamifikG61";
 
 	static Connection conn = null;
 	static Statement stmt = null;
@@ -153,7 +153,7 @@ public class ConexionBD {
 
 	}
 
-	static void crearBD() { // funcion para crear la tabla, en el caso de que no este creada
+	public static void crearBD() { // funcion para crear la tabla, en el caso de que no este creada
 		
 
 		try {
