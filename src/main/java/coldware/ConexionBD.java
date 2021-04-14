@@ -4,13 +4,14 @@ package coldware;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ConexionBD {
 
 	// JDBC driver name and database URL
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; // driver
-	final static String DB_URL = "jdbc:mysql://oracle.ilerna.com/potato";// EN CASA ES EL 6 EN CLASE ES UN 7
+	final static String DB_URL = "jdbc:mysql://oracle.ilerna.com/test";// EN CASA ES EL 6 EN CLASE ES UN 7
 
 	// Database credentials
 	final static String USER = "DAW2_GamifikG6";
@@ -81,7 +82,7 @@ public class ConexionBD {
 	// end FirstExample
 
 
-	public static void addPlanetas(List planetas) { // funcion para a�adir un ganador
+	public static void addPlanetas(List <Planeta> planetas) { // funcion para a�adir un ganador
 
 		// STEP 1. Import required packages
 
@@ -103,8 +104,11 @@ public class ConexionBD {
 			Date date = new Date(System.currentTimeMillis());
 			// guardamos la fecha en una string y la printa
 			String fecha = formatter.format(date);
+                        
+                        
 			for (int i = 0; i < (planetas.size()); i++) {
-            	sql = "INSERT INTO coldwar (nombre, fecha) " + "VALUES ('" + planetas.get(i).getNombre() + "','" + fecha + "')";
+                            
+                        sql = "INSERT INTO coldware (idPartida,NPlaneta,TPlaneta,Vidas,Misiles) VALUES ('" + fecha  + "','" + planetas.get(i).getNombre()+ "','"+ planetas.get(i).getTipoplaneta() + "','" + planetas.get(i).getVidas()+ "','"+ planetas.get(i).getMisiles_ronda()+ "')";
 			// ejecutamos el comando
 			stmt.executeUpdate(sql);
 				 
@@ -139,8 +143,8 @@ public class ConexionBD {
 
 	}
 
-	static void Ranking() { // funcion que printa ranking
-
+	public static List Ranking() { // funcion que printa ranking
+         List ll = new LinkedList();
 		try {
 			// STEP 2: Register JDBC driver
 			Class.forName("com.mysql.jdbc.Driver");
@@ -153,15 +157,6 @@ public class ConexionBD {
 			System.out.println("Printando resultados...");
 			stmt = conn.createStatement();
 
-			// our SQL SELECT query.
-			// if you only need a few columns, specify them by name instead of using "*"
-			// String query = "SELECT * FROM coldwar ";
-
-			//// CONTAR
-			// contamos la cantidad de nombres iguales para saber cuantos registros hay de
-			//// un usuario=a partidas ganadas
-
-			//// CONTAR
 
 			// create the java statement
 			Statement st = conn.createStatement();
@@ -170,23 +165,22 @@ public class ConexionBD {
 			// contamos la cantidad de nombres iguales para saber cuantos registros hay de
 			// un usuario=a partidas ganadas
 			ResultSet rs = st.executeQuery(
-					"SELECT COUNT(nombre) AS CONTADOR, nombre,MAX(fecha) FROM coldwar GROUP BY nombre ORDER BY CONTADOR DESC ");
+					"select distinct idPartida from coldware  ");
 
-			// iterate through the java resultset
-			System.out.println("______________________________________________________________");
-			System.out.println(" Victorias \t Nombre \t Fecha ultima victoria");
+                       
+              
 
-			while (rs.next()) // printa hasta que no haya rs.next
-			{
-				String num = rs.getString(1);
-				String nombre = rs.getString("nombre");
-				String fecha = rs.getString("MAX(fecha)");
-				// print the results
+                // Fetch each row from the result set
+                while (rs.next()) {
+          
+                 String str = rs.getString("idPartida");
 
-				System.out.println("\t" + num + " \t" + nombre + " \t\t" + fecha);
-			}
-			System.out.println("______________________________________________________________");
+                    //Assuming you have a user object
+             
 
+                     ll.add(str);
+            }
+			
 			// STEP 6: Clean-up environment
 			st.close();
 			stmt.close();
@@ -212,6 +206,8 @@ public class ConexionBD {
 			} // end finally try
 		} // end try
 
+                
+                return ll;
 	}
 
 	public static void crearBD() { // funcion para crear la tabla, en el caso de que no este creada
@@ -234,7 +230,7 @@ public class ConexionBD {
 
 			// se crea la tabla si no existe
 
-			sql = "CREATE TABLE IF NOT EXISTS coldwar (nombre VARCHAR(30), fecha VARCHAR(30));";
+			sql = "CREATE TABLE IF NOT EXISTS coldwar (idPartida varchar(40), NPlaneta varchar(20), TPlaneta int, Vidas int, Misiles int, primary key (idPartida, NPlaneta));";
 			stmt.execute(sql);
 
 			// STEP 6: Clean-up environment

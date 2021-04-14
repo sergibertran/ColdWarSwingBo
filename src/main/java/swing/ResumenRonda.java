@@ -70,8 +70,11 @@ public class ResumenRonda extends javax.swing.JDialog {
             
         }
     
-        ConexionBD.addPlanetas(planetas);
-
+           
+        System.out.println("EL VIEJO SAAANCAAAAAAA");
+        System.out.println(planetas);
+        
+        this.planetas=planetas;
              
     }
     
@@ -125,14 +128,13 @@ public class ResumenRonda extends javax.swing.JDialog {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 323, 150, 40));
 
-        jButton2.setText("jButton2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 333, 180, 30));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 1000, 560));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 110, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,8 +148,10 @@ public class ResumenRonda extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        new Guardar();
-       this.setVisible(false);
+        
+        System.out.println(planetas);
+        ConexionBD.crearBD();
+        ConexionBD.addPlanetas(planetas);
     }//GEN-LAST:event_jButton2ActionPerformed
 
   

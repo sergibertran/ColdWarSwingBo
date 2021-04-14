@@ -211,7 +211,6 @@ public class CrearEquipos extends javax.swing.JFrame {
         if (contJugadores < 5) {
             addEquipo(1);
             pack();
-
         }
 
 
