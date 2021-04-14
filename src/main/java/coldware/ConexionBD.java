@@ -8,7 +8,7 @@ public class ConexionBD {
 
 	// JDBC driver name and database URL
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; // driver
-	final static String DB_URL = "jdbc:mysql://oracle.ilerna.com/test";// EN CASA ES EL 6 EN CLASE ES UN 7
+	final static String DB_URL = "jdbc:mysql://oracle.ilerna.com/potato";// EN CASA ES EL 6 EN CLASE ES UN 7
 
 	// Database credentials
 	final static String USER = "DAW2_GamifikG6";
@@ -21,7 +21,7 @@ public class ConexionBD {
 
 	}
 
-	static void addGanador(String ganador) { // funcion para a�adir un ganador
+	public static void addGanador(String ganador) { // funcion para a�adir un ganador
 
 		// STEP 1. Import required packages
 

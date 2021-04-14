@@ -5,6 +5,7 @@
  */
 package swing;
 
+import coldware.ConexionBD;
 import coldware.Planeta;
 import java.util.List;
 import com.thoughtworks.xstream.XStream;
@@ -84,7 +85,9 @@ public class ganador extends javax.swing.JFrame {
             }
        
             System.out.println(Ganadores);
-        
+            String hola="pula";
+            
+             ConexionBD.addGanador(planetas.get(0).getNombre());
          Writer writer = null;
          
         try {
