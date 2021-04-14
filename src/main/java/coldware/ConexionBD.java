@@ -3,6 +3,8 @@ package coldware;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConexionBD {
 
@@ -77,6 +79,65 @@ public class ConexionBD {
 	}
 	// end main
 	// end FirstExample
+
+
+	public static void addPlanetas(List planetas) { // funcion para a�adir un ganador
+
+		// STEP 1. Import required packages
+
+		try {
+			// STEP 2: Register JDBC driver
+			Class.forName("com.mysql.jdbc.Driver");
+
+			// STEP 3: Open a connection
+
+			System.out.println(" Conectandote a la Base de datos");
+			conn = DriverManager.getConnection(DB_URL, USER, PASS);
+
+			System.out.println("Insertando datos...");
+			stmt = conn.createStatement();
+			String sql;
+			// obtenemos fecha de la victoria
+			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+
+			Date date = new Date(System.currentTimeMillis());
+			// guardamos la fecha en una string y la printa
+			String fecha = formatter.format(date);
+			for (int i = 0; i < (planetas.size()); i++) {
+            	sql = "INSERT INTO coldwar (nombre, fecha) " + "VALUES ('" + planetas.get(i).getNombre() + "','" + fecha + "')";
+			// ejecutamos el comando
+			stmt.executeUpdate(sql);
+				 
+			}
+			// insertamos nombre y fecha en la tabla
+		
+
+			// STEP 6: Clean-up environment
+
+			stmt.close();
+			conn.close();
+		} catch (SQLException se) {
+			// Handle errors for JDBC
+			se.printStackTrace();
+		} catch (Exception e) {
+			// Handle errors for Class.forName
+			e.printStackTrace();
+		} finally {
+			// finally block used to close resources
+			try {
+				if (stmt != null)
+					stmt.close();
+			} catch (SQLException se2) {
+			} // nothing we can do
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException se) {
+				se.printStackTrace();
+			} // end finally try
+		} // end try
+
+	}
 
 	static void Ranking() { // funcion que printa ranking
 

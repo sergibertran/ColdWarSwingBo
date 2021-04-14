@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package swing;
+import coldware.ConexionBD;
 import coldware.Planeta;
 import coldware.Planeta;
 import java.awt.Color;
@@ -68,7 +69,9 @@ public class ResumenRonda extends javax.swing.JDialog {
             
             
         }
-      
+    
+        ConexionBD.addPlanetas(planetas);
+
              
     }
     
