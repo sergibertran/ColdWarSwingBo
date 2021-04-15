@@ -324,28 +324,28 @@ void cursores(){
     private void imgplaneta() {
 
         
-        if ("Planeta Sejuani".equals(planetas.get(jugador).getNtipoplaneta())){
+        if ("Sejuani".equals(planetas.get(jugador).getNtipoplaneta())){
              jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\SejuaniSquare1.png")); // NOI18N
        
-        }else if ("Planeta Normal".equals(planetas.get(jugador).getNtipoplaneta())){
+        }else if ("Normal".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\MissFortuneSquare1.png")); // NOI18N 
-        }else if ("Planeta Gigante".equals(planetas.get(jugador).getNtipoplaneta())){
+        }else if ("Gigante".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\GragasSquare1.png")); // NOI18N 
-        }else if ("Planeta Azul".equals(planetas.get(jugador).getNtipoplaneta())){
+        }else if ("Azul".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\FizzSquare1.png")); // NOI18N 
-        }else if ("Planeta Rojo".equals(planetas.get(jugador).getNtipoplaneta())){
+        }else if ("Rojo".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\BrandSquare1.png")); // NOI18N 
-        }else if ("Planeta Verde".equals(planetas.get(jugador).getNtipoplaneta())){
+        }else if ("Verde".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\IvernSquare1.png")); // NOI18N 
-        }else if ("Planeta Vampiro".equals(planetas.get(jugador).getNtipoplaneta())){
+        }else if ("Vampiro".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\VladimirSquare1.png")); // NOI18N 
-        }else if ("Planeta Zombie".equals(planetas.get(jugador).getNtipoplaneta())){
+        }else if ("Zombie".equals(planetas.get(jugador).getNtipoplaneta())){
             
            jLabel2.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\AmumuSquare1.png")); // NOI18N 
         }
