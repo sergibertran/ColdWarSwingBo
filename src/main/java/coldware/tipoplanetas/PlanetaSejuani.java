@@ -15,7 +15,7 @@ public class PlanetaSejuani extends Planeta {
 		super.setMisiles_ronda(40);
 	}
 	public String tipoPlaneta() {
-		return "Planeta Sejuani";
+		return "Sejuani";
 		
 	}
 	/*************************************************************************************

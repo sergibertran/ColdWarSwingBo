@@ -19,6 +19,7 @@ public class ControlPartida {
     private Partida partida;
     
     public ControlPartida(){
+        
         partida = new Partida(this);
     }
     

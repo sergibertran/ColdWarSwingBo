@@ -22,7 +22,7 @@ public class PlanetaGigante extends Planeta {
 	}
 
 	public String tipoPlaneta() {
-		return "Planeta Gigante";
+		return "Gigante";
 		
 	}
 	/*************************************************************************************

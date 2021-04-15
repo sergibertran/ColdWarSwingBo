@@ -16,7 +16,7 @@ public class PlanetaVampiro extends Planeta {
 
 	
 	public String tipoPlaneta() {
-		return "Planeta Vampiro";
+		return "Vampiro";
 		
 	}
 	/*************************************************************************************

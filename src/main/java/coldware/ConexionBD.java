@@ -1,11 +1,21 @@
 
 package coldware;
 
+import coldware.tipoplanetas.PlanetaAzul;
+import coldware.tipoplanetas.PlanetaGigante;
+import coldware.tipoplanetas.PlanetaNormal;
+import coldware.tipoplanetas.PlanetaRojo;
+import coldware.tipoplanetas.PlanetaSejuani;
+import coldware.tipoplanetas.PlanetaVampiro;
+import coldware.tipoplanetas.PlanetaVerde;
+import coldware.tipoplanetas.PlanetaZombie;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import swing.ControlPartida;
+import swing.Partida;
 
 public class ConexionBD {
 
@@ -24,8 +34,8 @@ public class ConexionBD {
 
 	}
 
-
-	public static List <Planeta> getPlaneta(String idPartida){
+      
+	public static List <Planeta> getPlaneta(String idPartida,Partida Partida){
 		List<Planeta> planetas = new ArrayList<Planeta>();
 		
 		int i=0;
@@ -49,24 +59,27 @@ public class ConexionBD {
 			// execute the query, and get a java resultset
 			// contamos la cantidad de nombres iguales para saber cuantos registros hay de
 			// un usuario=a partidas ganadas
-			ResultSet rs = st.executeQuery("SELECT (NPlaneta, TPlaneta, Vidas, Misiles) FROM coldware where idPartida="+idPartida);
+			ResultSet rs = st.executeQuery("SELECT NPlaneta, TPlaneta, Vidas, Misiles FROM coldware where idPartida='" + idPartida + "'");
 
-	
+                      
 			// Fetch each row from the result set
 			while (rs.next()) {
-				
+				 
 				String NPlaneta = rs.getString("NPlaneta");
-				int TPlaneta = Integer.parseInt(rs.getString("TPlaneta"));
+				String TPlaneta = (rs.getString("TPlaneta"));
 				int Vidas = Integer.parseInt(rs.getString("Vidas"));
 				int Misiles = Integer.parseInt(rs.getString("Misiles"));
 				// Assuming you have a user object
-				planetas.get(i).setTipoplaneta(TPlaneta);
+                                planetas.add(Partida.crearPlanetas(i, TPlaneta, NPlaneta));
+				planetas.get(i).setNtipoplaneta(TPlaneta);
+                        
 				planetas.get(i).setNombre(NPlaneta);
 				planetas.get(i).setVidas(Vidas);
 				planetas.get(i).setMisiles_ronda(Misiles);
 				i++;
 			}
 			System.out.println(planetas);
+                        Partida.iniciarPartida(planetas);
 			i=0;
 			// STEP 6: Clean-up environment
 			st.close();
@@ -96,7 +109,12 @@ public class ConexionBD {
 		return planetas;
 	}
 
-	public static void addPlanetas(List<Planeta> planetas) { // funcion para a�adir un ganador
+	
+        
+      
+        
+        
+        public static void addPlanetas(List<Planeta> planetas) { // funcion para a�adir un ganador
 
 		// STEP 1. Import required packages
 
@@ -122,7 +140,7 @@ public class ConexionBD {
 			for (int i = 0; i < (planetas.size()); i++) {
 
 				sql = "INSERT INTO coldware (idPartida,NPlaneta,TPlaneta,Vidas,Misiles) VALUES ('" + fecha + "','"
-						+ planetas.get(i).getNombre() + "','" + planetas.get(i).getTipoplaneta() + "','"
+						+ planetas.get(i).getNombre() + "','" + planetas.get(i).getNtipoplaneta()+ "','"
 						+ planetas.get(i).getVidas() + "','" + planetas.get(i).getMisiles_ronda() + "')";
 				// ejecutamos el comando
 				stmt.executeUpdate(sql);
@@ -237,7 +255,7 @@ public class ConexionBD {
 
 			// se crea la tabla si no existe
 
-			sql = "CREATE TABLE IF NOT EXISTS coldwar (idPartida varchar(40), NPlaneta varchar(20), TPlaneta int, Vidas int, Misiles int, primary key (idPartida, NPlaneta));";
+			sql = "CREATE TABLE IF NOT EXISTS coldwar (idPartida varchar(40), NPlaneta varchar(20), TPlaneta varchar(40), Vidas int, Misiles int, primary key (idPartida, NPlaneta));";
 			stmt.execute(sql);
 
 			// STEP 6: Clean-up environment

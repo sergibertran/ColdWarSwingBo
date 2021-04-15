@@ -129,12 +129,15 @@ public class ResumenRonda extends javax.swing.JDialog {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 323, 150, 40));
 
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 110, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 270, 150, 40));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 560));
 
         pack();
@@ -156,11 +159,13 @@ public class ResumenRonda extends javax.swing.JDialog {
        if(ventana == 0) {
             Resultado="Guardado correctamente, se va a cerrar el juego...";
           JOptionPane.showMessageDialog(null, Resultado);
-       
+          ConexionBD.addPlanetas(planetas);
+          System.exit(0);
        } 			
        else if(ventana == 1) {
            Resultado="Guardado correctamente, continuemos la batalla";	
             JOptionPane.showMessageDialog(null, Resultado);
+            ConexionBD.addPlanetas(planetas);
        }
        else if(ventana == 2) {
            Resultado="Después no nos vengas llorando que no encuentras tus datos";	

@@ -207,16 +207,17 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
       List<String> Partidas;
         Partidas = ConexionBD.Ranking();
      
-         String[] choices = { "A", "B", "C", "D", "E", "F" };
+        
     String input = (String) JOptionPane.showInputDialog(null, "Escoge una partida.",
         "Cargar Partida", JOptionPane.QUESTION_MESSAGE, null, // Use
-                                                                        // default
-                                                                        // icon
+                                                                        // default                                                             // icon
         Partidas.toArray(), // Array of choices
         Partidas.toArray()[0]); // Initial choice
     System.out.println(input);
-    ConexionBD.getPlaneta(input);
-       
+    this.setVisible(false);
+    ControlPartida ControlPartida= new ControlPartida();
+    ConexionBD.getPlaneta(input,ControlPartida.getPartida());
+     
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**

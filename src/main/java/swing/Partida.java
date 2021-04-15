@@ -73,7 +73,7 @@ public class Partida {
          Planeta restipoplaneta = null;
          
          System.out.println("esta es la funcion"+TipoPlaneta);
-         
+         System.out.println("swing.Partida.crearPlanetas()");
           switch(TipoPlaneta) 
         { 
             case "Sejuani": 

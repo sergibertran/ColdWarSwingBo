@@ -16,7 +16,7 @@ public class PlanetaZombie extends Planeta {
 	int revivido=1;
 	
 	public String tipoPlaneta() {
-		return "Planeta Zombie";
+		return "Zombie";
 		
 	}
 	

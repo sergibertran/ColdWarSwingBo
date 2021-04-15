@@ -15,7 +15,7 @@ public class PlanetaVerde extends Planeta {
 	}
 	
 	public String tipoPlaneta() {
-		return "Planeta Verde";
+		return "Verde";
 		
 	}
 
