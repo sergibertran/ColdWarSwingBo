@@ -220,6 +220,7 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
     this.setVisible(false);
     ControlPartida ControlPartida= new ControlPartida();
     ConexionBD.getPlaneta(input,ControlPartida.getPartida());
+    //gracias sanca por todo
    }
     }//GEN-LAST:event_jButton7ActionPerformed
 
