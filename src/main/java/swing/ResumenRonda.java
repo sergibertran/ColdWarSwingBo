@@ -182,6 +182,7 @@ public class ResumenRonda extends javax.swing.JDialog {
            void cursores(){
         
         jButton1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButton2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
     }
  

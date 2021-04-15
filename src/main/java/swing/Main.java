@@ -131,14 +131,15 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 660, 170, 40));
 
-        jButton7.setText("jButton7");
+        jButton7.setBorder(null);
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
-                //volver a montar el objeto planeta y llamar a la funcion iniciarPartida
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 640, 220, 50));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         pack();
@@ -156,6 +157,8 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
         jButton4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jButton5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         jButton6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        jButton7.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        
     }
        
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -209,15 +212,15 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
      
         
     String input = (String) JOptionPane.showInputDialog(null, "Escoge una partida.",
-        "Cargar Partida", JOptionPane.QUESTION_MESSAGE, null, // Use
-                                                                        // default                                                             // icon
-        Partidas.toArray(), // Array of choices
-        Partidas.toArray()[0]); // Initial choice
-    System.out.println(input);
+    "Cargar Partida", JOptionPane.QUESTION_MESSAGE, null, Partidas.toArray(),Partidas.toArray()[0]);
+    
+   if (input==null){
+        
+   }else{
     this.setVisible(false);
     ControlPartida ControlPartida= new ControlPartida();
     ConexionBD.getPlaneta(input,ControlPartida.getPartida());
-     
+   }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
