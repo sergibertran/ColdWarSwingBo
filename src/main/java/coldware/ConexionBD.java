@@ -16,7 +16,7 @@ public class ConexionBD {
 	// Database credentials
 	final static String USER = "DAW2_GamifikG6";
 	final static String PASS = "aGamifikG61";
-
+	
 	static Connection conn = null;
 	static Statement stmt = null;
 
@@ -24,36 +24,52 @@ public class ConexionBD {
 
 	}
 
-	public static void addGanador(String ganador) { // funcion para a�adir un ganador
 
-		// STEP 1. Import required packages
-
+	public static List <Planeta> getPlaneta(String idPartida){
+		List<Planeta> planetas = new ArrayList<Planeta>();
+		
+		int i=0;
+		List ll = new LinkedList();
+		List lista = new LinkedList();
 		try {
 			// STEP 2: Register JDBC driver
 			Class.forName("com.mysql.jdbc.Driver");
 
 			// STEP 3: Open a connection
 
-			System.out.println(" Conectandote a la Base de datos");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
-			System.out.println("Insertando datos...");
+			// STEP 4: Execute a query
+			System.out.println("Printando resultados...");
 			stmt = conn.createStatement();
-			String sql;
-			// obtenemos fecha de la victoria
-			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
 
-			Date date = new Date(System.currentTimeMillis());
-			// guardamos la fecha en una string y la printa
-			String fecha = formatter.format(date);
+			// create the java statement
+			Statement st = conn.createStatement();
 
-			// insertamos nombre y fecha en la tabla
-			sql = "INSERT INTO coldwar (nombre, fecha) " + "VALUES ('" + ganador + "','" + fecha + "')";
-			// ejecutamos el comando
-			stmt.executeUpdate(sql);
+			// execute the query, and get a java resultset
+			// contamos la cantidad de nombres iguales para saber cuantos registros hay de
+			// un usuario=a partidas ganadas
+			ResultSet rs = st.executeQuery("SELECT (NPlaneta, TPlaneta, Vidas, Misiles) FROM coldware where idPartida="+idPartida);
 
+	
+			// Fetch each row from the result set
+			while (rs.next()) {
+				
+				String NPlaneta = rs.getString("NPlaneta");
+				int TPlaneta = Integer.parseInt(rs.getString("TPlaneta"));
+				int Vidas = Integer.parseInt(rs.getString("Vidas"));
+				int Misiles = Integer.parseInt(rs.getString("Misiles"));
+				// Assuming you have a user object
+				planetas.get(i).setTipoplaneta(TPlaneta);
+				planetas.get(i).setNombre(NPlaneta);
+				planetas.get(i).setVidas(Vidas);
+				planetas.get(i).setMisiles_ronda(Misiles);
+				i++;
+			}
+			System.out.println(planetas);
+			i=0;
 			// STEP 6: Clean-up environment
-
+			st.close();
 			stmt.close();
 			conn.close();
 		} catch (SQLException se) {
@@ -77,12 +93,10 @@ public class ConexionBD {
 			} // end finally try
 		} // end try
 
+		return planetas;
 	}
-	// end main
-	// end FirstExample
 
-
-	public static void addPlanetas(List <Planeta> planetas) { // funcion para a�adir un ganador
+	public static void addPlanetas(List<Planeta> planetas) { // funcion para a�adir un ganador
 
 		// STEP 1. Import required packages
 
@@ -104,17 +118,17 @@ public class ConexionBD {
 			Date date = new Date(System.currentTimeMillis());
 			// guardamos la fecha en una string y la printa
 			String fecha = formatter.format(date);
-                        
-                        
+
 			for (int i = 0; i < (planetas.size()); i++) {
-                            
-                        sql = "INSERT INTO coldware (idPartida,NPlaneta,TPlaneta,Vidas,Misiles) VALUES ('" + fecha  + "','" + planetas.get(i).getNombre()+ "','"+ planetas.get(i).getTipoplaneta() + "','" + planetas.get(i).getVidas()+ "','"+ planetas.get(i).getMisiles_ronda()+ "')";
-			// ejecutamos el comando
-			stmt.executeUpdate(sql);
-				 
+
+				sql = "INSERT INTO coldware (idPartida,NPlaneta,TPlaneta,Vidas,Misiles) VALUES ('" + fecha + "','"
+						+ planetas.get(i).getNombre() + "','" + planetas.get(i).getTipoplaneta() + "','"
+						+ planetas.get(i).getVidas() + "','" + planetas.get(i).getMisiles_ronda() + "')";
+				// ejecutamos el comando
+				stmt.executeUpdate(sql);
+
 			}
 			// insertamos nombre y fecha en la tabla
-		
 
 			// STEP 6: Clean-up environment
 
@@ -144,7 +158,8 @@ public class ConexionBD {
 	}
 
 	public static List Ranking() { // funcion que printa ranking
-         List ll = new LinkedList();
+		List ll = new LinkedList();
+		List lista = new LinkedList();
 		try {
 			// STEP 2: Register JDBC driver
 			Class.forName("com.mysql.jdbc.Driver");
@@ -157,30 +172,24 @@ public class ConexionBD {
 			System.out.println("Printando resultados...");
 			stmt = conn.createStatement();
 
-
 			// create the java statement
 			Statement st = conn.createStatement();
 
 			// execute the query, and get a java resultset
 			// contamos la cantidad de nombres iguales para saber cuantos registros hay de
 			// un usuario=a partidas ganadas
-			ResultSet rs = st.executeQuery(
-					"select distinct idPartida from coldware  ");
+			ResultSet rs = st.executeQuery("select distinct idPartida from coldware  ");
 
-                       
-              
+			// Fetch each row from the result set
+			while (rs.next()) {
 
-                // Fetch each row from the result set
-                while (rs.next()) {
-          
-                 String str = rs.getString("idPartida");
+				String str = rs.getString("idPartida");
 
-                    //Assuming you have a user object
-             
+				// Assuming you have a user object
 
-                     ll.add(str);
-            }
-			
+				ll.add(str);
+			}
+
 			// STEP 6: Clean-up environment
 			st.close();
 			stmt.close();
@@ -206,12 +215,10 @@ public class ConexionBD {
 			} // end finally try
 		} // end try
 
-                
-                return ll;
+		return ll;
 	}
 
 	public static void crearBD() { // funcion para crear la tabla, en el caso de que no este creada
-		
 
 		try {
 			// STEP 2: Register JDBC driver

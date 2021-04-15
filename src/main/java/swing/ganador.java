@@ -85,9 +85,9 @@ public class ganador extends javax.swing.JFrame {
             }
        
             System.out.println(Ganadores);
-            String hola="pula";
+         
             
-             ConexionBD.addGanador(planetas.get(0).getNombre());
+         
          Writer writer = null;
          
         try {

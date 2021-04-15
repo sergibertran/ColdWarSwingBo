@@ -9,6 +9,7 @@ import coldware.ConexionBD;
 import coldware.Planeta;
 import coldware.Reproductor;
 import java.awt.Cursor;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -24,6 +25,7 @@ public class Main extends javax.swing.JFrame {
     /**
      * Creates new form Main
      */
+    List<Planeta> planetas = new ArrayList<Planeta>();
    static int onoff = 0;
 Reproductor MP3 = new Reproductor();
     public Main() {
@@ -213,6 +215,7 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
         Partidas.toArray(), // Array of choices
         Partidas.toArray()[0]); // Initial choice
     System.out.println(input);
+    ConexionBD.getPlaneta(input);
        
     }//GEN-LAST:event_jButton7ActionPerformed
 
