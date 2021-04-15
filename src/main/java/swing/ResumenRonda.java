@@ -13,6 +13,7 @@ import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -149,9 +150,27 @@ public class ResumenRonda extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
+           String[] botones = {"Guardar y salir", "Guardar y continuar", "Cancelar"};
+       int ventana = JOptionPane.showOptionDialog(null, "Pulsa un boton:", "Javadesde0.com", JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE, null,botones, botones[0]);
+        String Resultado="";	
+       if(ventana == 0) {
+            Resultado="Guardado correctamente, se va a cerrar el juego...";
+          JOptionPane.showMessageDialog(null, Resultado);
+       
+       } 			
+       else if(ventana == 1) {
+           Resultado="Guardado correctamente, continuemos la batalla";	
+            JOptionPane.showMessageDialog(null, Resultado);
+       }
+       else if(ventana == 2) {
+           Resultado="Después no nos vengas llorando que no encuentras tus datos";	
+            JOptionPane.showMessageDialog(null, Resultado);
+       }
+ 
+    
         System.out.println(planetas);
-        ConexionBD.crearBD();
-        ConexionBD.addPlanetas(planetas);
+        //ConexionBD.crearBD();
+        //ConexionBD.addPlanetas(planetas);
     }//GEN-LAST:event_jButton2ActionPerformed
 
   
