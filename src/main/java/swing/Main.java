@@ -133,6 +133,7 @@ jButton5.setIcon(new javax.swing.ImageIcon("src\\main\\java\\img\\musica muteada
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
+                //volver a montar el objeto planeta y llamar a la funcion iniciarPartida
             }
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
