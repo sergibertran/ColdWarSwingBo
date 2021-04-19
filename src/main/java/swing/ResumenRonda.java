@@ -159,12 +159,15 @@ public class ResumenRonda extends javax.swing.JDialog {
        if(ventana == 0) {
             Resultado="Guardado correctamente, se va a cerrar el juego...";
           JOptionPane.showMessageDialog(null, Resultado);
+            ConexionBD.crearBD();
           ConexionBD.addPlanetas(planetas);
+        
           System.exit(0);
        } 			
        else if(ventana == 1) {
            Resultado="Guardado correctamente, continuemos la batalla";	
             JOptionPane.showMessageDialog(null, Resultado);
+            ConexionBD.crearBD();
             ConexionBD.addPlanetas(planetas);
        }
        else if(ventana == 2) {

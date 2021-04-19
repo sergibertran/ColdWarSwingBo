@@ -21,7 +21,7 @@ public class ConexionBD {
 
 	// JDBC driver name and database URL
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver"; // driver
-	final static String DB_URL = "jdbc:mysql://oracle.ilerna.com/test";// EN CASA ES EL 6 EN CLASE ES UN 7
+	final static String DB_URL = "jdbc:mysql://192.168.3.26/test";// EN CASA ES EL 6 EN CLASE ES UN 7
 
 	// Database credentials
 	final static String USER = "DAW2_GamifikG6";
@@ -255,7 +255,7 @@ public class ConexionBD {
 
 			// se crea la tabla si no existe
 
-			sql = "CREATE TABLE IF NOT EXISTS coldwar (idPartida varchar(40), NPlaneta varchar(20), TPlaneta varchar(40), Vidas int, Misiles int, primary key (idPartida, NPlaneta));";
+			sql = "CREATE TABLE IF NOT EXISTS coldware (idPartida varchar(40), NPlaneta varchar(20), TPlaneta varchar(40), Vidas int, Misiles int, primary key (idPartida, NPlaneta));";
 			stmt.execute(sql);
 
 			// STEP 6: Clean-up environment
